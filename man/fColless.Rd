@@ -13,7 +13,9 @@ fColless(treeImbalance)
 An integer giving the Colless number the tree.
 }
 \description{
-Finds the Colless number, given a tree imbalance as input
+I think: finds the Colless number, given a tree imbalance as input.
+Issues: does not match function "colless", so maybe I'm wrong.
+Should it have an option to normalize, like "colless"?
 Notes: needs to issue warning about input types.
 Adapt for phylo as well as phylo4?
 }

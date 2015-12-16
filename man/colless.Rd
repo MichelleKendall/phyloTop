@@ -8,6 +8,8 @@ colless(tree, normalize = TRUE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo4}}
+
+\item{normalize}{option to normalize the result by dividing by CHECK WHAT! Defaults to \code{TRUE}.}
 }
 \value{
 The Colless imbalance number of the tree.

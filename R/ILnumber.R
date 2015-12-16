@@ -1,6 +1,6 @@
-#' COMPLETE THIS
+#' IL number
 #' 
-#' 
+#' Computes the number of internal nodes with a single tip child. 
 #' Notes: needs to issue warning about input types.
 #' Adapt for phylo as well as phylo4?
 #' 
@@ -8,12 +8,12 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo4}
-#' @return Complete this
+#' @return The integer number of internal nodes with a single tip child.
 #' 
 #' @importFrom phylobase nTips
 #' 
 #' @examples
-#' ILnumber(rtree4(10))
+#' #ILnumber(rtree4(10))
 #' 
 #' 
 #' @export

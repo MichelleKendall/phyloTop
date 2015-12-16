@@ -18,7 +18,7 @@ Notes: needs to issue warning about input types.
 Adapt for phylo as well as phylo4?
 }
 \examples{
-dists(mytree)
+dists(rtree(10))
 
 
 }

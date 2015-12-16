@@ -17,7 +17,7 @@ Finds the mean size of ladders in the tree
 }
 \examples{
 ## Find the average ladder size in a random tree
-avgLadder(rtree4(10))
+#avgLadder(rtree4(10))
 
 
 }

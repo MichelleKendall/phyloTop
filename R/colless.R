@@ -8,6 +8,7 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo4}
+#' @param normalize option to normalize the result by dividing by CHECK WHAT! Defaults to \code{TRUE}.
 #' @return The Colless imbalance number of the tree.
 #' 
 #' @importFrom phylobase nTips

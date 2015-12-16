@@ -7,6 +7,7 @@
 #'   
 #' @param treeList a list of trees of class \code{phylo4}
 #' @param baseFuncs a list of base functions
+#' @param loadingBar option to include a loading bar to chart progress. Defaults to \code{TRUE}.
 #' @return A list of base functions evaluated on each tree.
 #'   
 #' @examples

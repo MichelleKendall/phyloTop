@@ -8,6 +8,8 @@ configFind(tree, configSize)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo4}}
+
+\item{configSize}{integer giving size of configurations of interest}
 }
 \value{
 An integer representing the number of cherries in the tree.

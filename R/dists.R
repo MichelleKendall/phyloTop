@@ -12,10 +12,11 @@
 #' 
 #' @importFrom phylobase nodeId
 #' @importFrom phylobase nEdges
+#' @importFrom phylobase edgeLength
 #' @importFrom phylobase nodeDepth
 #'   
 #' @examples
-#' dists(mytree)
+#' dists(rtree(10))
 #' 
 #' 
 #' @export

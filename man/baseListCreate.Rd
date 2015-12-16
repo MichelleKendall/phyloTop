@@ -10,6 +10,8 @@ baseListCreate(treeList, baseFuncs, loadingBar = TRUE)
 \item{treeList}{a list of trees of class \code{phylo4}}
 
 \item{baseFuncs}{a list of base functions}
+
+\item{loadingBar}{option to include a loading bar to chart progress. Defaults to \code{TRUE}.}
 }
 \value{
 A list of base functions evaluated on each tree.

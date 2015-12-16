@@ -12,10 +12,8 @@ Depends:
 	ape
 Imports:
 	igraph,
-	jsonlite,
 	NHPoisson,
-    phylobase,
-    testthat    
+    phylobase    
 Suggests:
     testthat
 RoxygenNote: 5.0.1

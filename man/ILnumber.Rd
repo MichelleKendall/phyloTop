@@ -2,7 +2,7 @@
 % Please edit documentation in R/ILnumber.R
 \name{ILnumber}
 \alias{ILnumber}
-\title{COMPLETE THIS}
+\title{IL number}
 \usage{
 ILnumber(tree)
 }
@@ -10,14 +10,15 @@ ILnumber(tree)
 \item{tree}{a tree of class \code{phylo4}}
 }
 \value{
-Complete this
+The integer number of internal nodes with a single tip child.
 }
 \description{
+Computes the number of internal nodes with a single tip child. 
 Notes: needs to issue warning about input types.
 Adapt for phylo as well as phylo4?
 }
 \examples{
-ILnumber(rtree4(10))
+#ILnumber(rtree4(10))
 
 
 }

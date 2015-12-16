@@ -13,9 +13,8 @@
 #' @param configSize an integer giving the configuration size of interest.
 #' @return An integer representing the number of cherries in the tree.
 #' 
-#' @importFrom jsonlite validate
-#' @import testthat
-#'   
+#' @importFrom phylobase nodeId
+#' 
 #' @examples
 #' ## Highlight cherries in a random tree:
 #' configShow(rtree4(10),2)
@@ -23,12 +22,10 @@
 #' 
 #' @export
 configShow <- function(tree,configSize) {
+  stop("subtreeShow is currently broken, sorry")
   nTipDes <- nTipDescendants(tree)
   # Finds the nodes of the correct configsize
   confFind <- nodeId(tree)[which(nTipDes==configSize)] 
   # Prints the tree
-  validate(  
-    need(test_that("subtreeShow is broken",{
-expect_error(subtreeShow(tree,confFind))}), "Cannot plot because subtreeShow is currently broken, sorry")
-    )
+  subtreeShow(tree,confFind)
 }
