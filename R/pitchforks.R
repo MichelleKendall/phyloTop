@@ -1,0 +1,1 @@
+pitchforks<-function(tree){nConfig(tree,3)}
