@@ -1,5 +1,5 @@
 Package: phyloTop
-Title: Evaluating Topological Properties of Phylogenies
+Title: Calculating Topological Properties of Phylogenies
 Version: 2.0.0
 Authors@R: c(MB=person("Michael", "Boyd", email="mboyd855@gmail.com", role = c("aut")),
       MK=person("Michelle", "Kendall", email="m.kendall@imperial.ac.uk", role = c("aut", "cre")),
