@@ -1,4 +1,4 @@
-[![Travis-CI Build Status](https://travis-ci.org/michellekendall/phyloTop.png?branch=master)](https://travis-ci.org/michellekendall/phyloTop)
+[![Travis-CI Build Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https://travis-ci.org/MichelleKendall/phyloTop)
 
 # phyloTop
 Calculating topological properties of phylogenies
