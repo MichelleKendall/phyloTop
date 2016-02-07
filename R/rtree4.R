@@ -9,7 +9,7 @@
 #' @param ... further arguments to be passed to rtree
 #' @return An object of class \code{"phylo4"}
 #'
-#' @importFrom ape rtree
+#' @import ape
 #'
 #' @examples
 #' ## Create a random phylo4 tree with 10 tips

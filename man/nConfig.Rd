@@ -2,33 +2,35 @@
 % Please edit documentation in R/nConfig.R
 \name{nConfig}
 \alias{nConfig}
-\title{Number of internal nodes with a given number of tip descendants}
+\title{Configuration sizes in the tree}
 \usage{
-nConfig(tree, configSize)
+nConfig(tree, k = length(tree$tip.label))
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{configSize}{an integer giving the size of configuration of interest.}
+\item{k}{An integer between 1 and the number of tips (default is the number of tips), specifying the maximum clade size of interest.}
 }
 \value{
-An integer representing the number of internal nodes whose number of tip descendants is equal to \code{configSize}.
+A list with 2 entries: 
+\itemize{
+\item allsizes is a vector giving the size of the clade descending at each node. Tips all have the value 1. 
+Internal nodes have their number of tip descendants. 
+\item firstk is a vector where firstk[[i]] is the number of clades of size i in the tree. 
+If k is specified then it outputs the first k of them; otherwise it gives all k <= number of tips
+}
 }
 \description{
-Finds the number of internal nodes whose number of tip descendants is equal to \code{configSize}.
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
+Finds the sizes of configurations in the tree.
 }
 \examples{
-## Find the number of cherries:
-nConfig(rtree4(10),2)
-## Find the number of pitchforks:
-nConfig(rtree4(10),3)
+## Configuration sizes on a random tree with 10 tips:
+nConfig(rtree(10))
 
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
+Caroline Colijn \email{c.colijn@imperial.ac.uk}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }

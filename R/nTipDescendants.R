@@ -1,8 +1,6 @@
 #' Number of tip descendants
 #' 
-#' Finds the number of tip descendants for each internal node of the tree
-#' Notes: needs to issue warning about input types.
-#' Adapt for phylo as well as phylo4?
+#' Finds the number of tip descendants for each internal node of the tree. Used by configFind and configShow.
 #' 
 #' @author Michael Boyd \email{mboyd855@gmail.com}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
@@ -14,8 +12,9 @@
 #' @importFrom phylobase descendants
 #'   
 #' @examples
-#' nTipDescendants(mytree)
+#' nTipDescendants(rtree4(10))
 #' 
+#' @keywords internal
 #' 
 #' @export
 nTipDescendants <- function(tree) {

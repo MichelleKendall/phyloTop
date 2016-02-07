@@ -1,26 +1,43 @@
-#' Number of internal nodes with a given number of tip descendants
+#' Configuration sizes in the tree
 #' 
-#' Finds the number of internal nodes whose number of tip descendants is equal to \code{configSize}.
-#' Notes: needs to issue warning about input types.
-#' Adapt for phylo as well as phylo4?
+#' Finds the sizes of configurations in the tree. 
 #' 
-#' @author Michael Boyd \email{mboyd855@gmail.com}
+#' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
-#' @param tree a tree of class \code{phylo4}
-#' @param configSize an integer giving the size of configuration of interest.
-#' @return An integer representing the number of internal nodes whose number of tip descendants is equal to \code{configSize}.
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
+#' @param k An integer between 1 and the number of tips (default is the number of tips), specifying the maximum clade size of interest.
+#' @return A list with 2 entries: 
+#' \itemize{
+#' \item allsizes is a vector giving the size of the clade descending at each node. Tips all have the value 1. 
+#' Internal nodes have their number of tip descendants. 
+#' \item firstk is a vector where firstk[[i]] is the number of clades of size i in the tree. 
+#' If k is specified then it outputs the first k of them; otherwise it gives all k <= number of tips
+#' }
 #' 
-#' 
+#' @import ape
+#'  
 #' @examples
-#' ## Find the number of cherries:
-#' nConfig(rtree4(10),2)
-#' ## Find the number of pitchforks:
-#' nConfig(rtree4(10),3)
+#' ## Configuration sizes on a random tree with 10 tips:
+#' nConfig(rtree(10))
 #' 
 #' 
 #' @export
-nConfig <- function(tree,configSize) {
-  return(sum(nTipDescendants(tree)==configSize))
+nConfig <- function(tree,k=length(tree$tip.label)) { 
+  tree <- phyloCheck(tree)
+  if (is.null(tree$tip.label))
+    stop("This tree has no tip labels")
+  num.tips=length(tree$tip.label)
+  if(k > num.tips) {k <- num.tips} # k greater than number of tips makes no sense would otherwise append zeroes to "firstk" 
+  labels=NA + 0*(1:(nrow(tree$edge)+1))
+  names(labels)[1:num.tips]=tree$tip.label;
+  names(labels)[(num.tips+1): length(labels)]=paste("node",1:(length(labels)-num.tips),sep="")
+  labels[1:num.tips]=1     # tips are 1 here. 
+  NodeIDS= (num.tips + 1) : (2*num.tips -1)
+  while (any(is.na(labels))) { 
+    IsReady = NodeIDS[ vapply(NodeIDS,function(x) !any(is.na(labels[tree$edge[which(tree$edge[,1]==x),2]])) & is.na(labels[x])  ,FUN.VALUE=TRUE) ]
+    TheseLabels = unlist(sapply(IsReady, function(x) sum(labels[tree$edge[tree$edge[,1]==x,2]])))
+    labels[IsReady]=TheseLabels
+  }
+  return(list(allsizes=labels,firstk=vapply(1:k, function(x) sum(labels==x),FUN.VALUE=1)))
 }
-

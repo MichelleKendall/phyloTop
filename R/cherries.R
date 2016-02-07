@@ -1,18 +1,22 @@
 #' Cherry number
 #' 
-#' Finds the number of cherries in a tree
-#' Notes: needs to issue warning about input types.
-#' Adapt for phylo as well as phylo4?
+#' Finds the number of cherries in a tree. A cherry is considered to be a pair of sister tips.
 #' 
-#' @author Michael Boyd \email{mboyd855@gmail.com}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
-#'   
-#' @param tree a tree of class \code{phylo4}
+#'     
+#' @param tree a tree of class \code{phylo} or \code{phylo4}
 #' @return An integer representing the number of cherries in the tree.
-#'   
+#'
+#' @import ape
+#'        
 #' @examples
-#' cherries(rtree4(10))
+#' tree <- rtree(10)
+#' plot(tree)
+#' cherries(tree)
 #' 
 #' 
 #' @export
-cherries<-function(tree) {nConfig(tree,2)}
+cherries<-function(tree) {
+  tree <- phyloCheck(tree)
+  nConfig(tree)$firstk[[2]]
+  }

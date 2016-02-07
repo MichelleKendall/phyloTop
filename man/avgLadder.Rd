@@ -7,23 +7,22 @@
 avgLadder(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
 }
 \value{
-The average ladder size
+The mean ladder size
 }
 \description{
 Finds the mean size of ladders in the tree
 }
 \examples{
-## Find the average ladder size in a random tree
-#avgLadder(rtree4(10))
-
+## Find the average ladder size in a random tree with 20 tips:
+\dontrun{ # known bug!
+avgLadder(rtree(20))
+}
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
-
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
 

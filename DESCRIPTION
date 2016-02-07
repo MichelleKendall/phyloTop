@@ -2,18 +2,18 @@ Package: phyloTop
 Title: Evaluating Topological Properties of Phylogenies
 Version: 2.0.0
 Authors@R: c(MB=person("Michael", "Boyd", email="mboyd855@gmail.com", role = c("aut")),
-     MK=person("Michelle", "Kendall", email="m.kendall@imperial.ac.uk", role = c("aut", "cre")),
-	 CC=person("Caroline", "Colijn", role = c("aut")))
+      MK=person("Michelle", "Kendall", email="m.kendall@imperial.ac.uk", role = c("aut", "cre")),
+	    CC=person("Caroline", "Colijn", role = c("aut")))
 Maintainer: Michelle Kendall <m.kendall@imperial.ac.uk>
 Description: Tools for calculating and viewing topological properties of phylogenetic trees.
 License: GPL-2
 Depends:
 	R (>= 3.2.2),
-	ape
+	ape,
+	phangorn
 Imports:
 	igraph,
-	NHPoisson,
-    phylobase    
+  phylobase    
 Suggests:
-    testthat
+  testthat
 RoxygenNote: 5.0.1

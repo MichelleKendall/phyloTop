@@ -12,19 +12,16 @@ configShow(tree, configSize)
 \item{configSize}{an integer giving the configuration size of interest.}
 }
 \value{
-An integer representing the number of cherries in the tree.
+A plot of the tree, highlighting the configurations of the given size.
 }
 \description{
 Plots the tree with configurations of a given size highlighted.
-CURRENTLY BROKEN.
-Probably needs argument "type="internal"" in nodeId?
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
 }
 \examples{
-## Highlight cherries in a random tree:
-configShow(rtree4(10),2)
-
+## Highlight pitchforks in a random tree:
+\dontrun{
+configShow(rtree(20),3)
+}
 
 }
 \author{

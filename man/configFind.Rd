@@ -7,28 +7,20 @@
 configFind(tree, configSize)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
 
 \item{configSize}{integer giving size of configurations of interest}
 }
 \value{
-An integer representing the number of cherries in the tree.
+The internal node IDS with the given number of tip descendants
 }
 \description{
-I THINK: find the internal node IDs whose number of tip descendants is equal to configSize. 
-However, it didn't do this at first; I have added "type="internal"" to make it work as I expected...
-Come back to this.
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
-}
-\examples{
-configFind(rtree4(10),2)
-
-
+Find the internal node IDs whose number of tip descendants is equal to configSize.
 }
 \author{
 Michael Boyd \email{mboyd855@gmail.com}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
+\keyword{internal}
 

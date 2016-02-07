@@ -1,3 +1,19 @@
+#' Root ladder distance
+#' 
+#' Called by ladderNums
+#' 
+#' @author Michael Boyd \email{mboyd855@gmail.com}
+#'   
+#' @param tree a tree of class \code{phylo4}
+#' @return Root ladder distance
+#' 
+#' @importFrom phylobase nodeId
+#' @importFrom phylobase nodeType
+#' @importFrom phylobase children
+#' 
+#' @keywords internal
+#' 
+#' @export
 rootLaddDist <- function(tree) {
   root <- nodeId(tree)[nodeType(tree)=='root']
   childs <- children(tree,root)

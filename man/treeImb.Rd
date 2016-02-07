@@ -7,26 +7,19 @@
 treeImb(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 }
 \value{
-A matrix where columns correspond to nodes and rows correspond to descendant branches
+A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches
 }
 \description{
 Finds the imbalance of descendants: for each node it gives the number of descendants from of each descendant branch.
-Notes: needs to issue warning about input types.
-Does it work for non-binary trees?
-Does it need to output a load of zeroes for tips or can we drop these entries?
-Adapt for phylo as well as phylo4?
 }
 \examples{
-treeImb(rtree4(10))
-
+treeImb(rtree(10))
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
-
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
 

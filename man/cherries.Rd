@@ -7,24 +7,22 @@
 cherries(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
 }
 \value{
 An integer representing the number of cherries in the tree.
 }
 \description{
-Finds the number of cherries in a tree
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
+Finds the number of cherries in a tree. A cherry is considered to be a pair of sister tips.
 }
 \examples{
-cherries(rtree4(10))
+tree <- rtree(10)
+plot(tree)
+cherries(tree)
 
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
-
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
 

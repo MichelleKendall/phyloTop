@@ -1,23 +1,21 @@
 #' Ladder numbers
 #' 
-#' Finds the ladder numbers
-#' Notes: needs to issue warning about input types.
-#' Adapt for phylo as well as phylo4?
+#' Finds the ladders and their positions in the tree, for plotting
 #' 
 #' @author Michael Boyd \email{mboyd855@gmail.com}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
-#' @param tree a tree of class \code{phylo4}
-#' @return A vector of ladder numbers (clarify)
+#' @param tree a tree of class \code{phylo} or \code{phylo4}
+#' @return A vector corresponding to tree edges and their ladder sizes
 #'   
 #' @importFrom phylobase nodeId
 #' @importFrom phylobase nodeType
-#' @examples
-#' ladderNums(rtree4(10))
-#' 
+#'
+#' @keywords internal 
 #' 
 #' @export
 ladderNums <-function(tree) {
+  tree <- as(tree, "phylo4")
   arr <- as.array(nodeId(tree))
   locLadd <- function(x) {
     if (nodeType(tree)[x]=='tip') {return(0)}
@@ -26,4 +24,3 @@ ladderNums <-function(tree) {
   ladderNumbers <- apply(arr,1,locLadd)
   return(ladderNumbers)
 }
-

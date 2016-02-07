@@ -13,13 +13,10 @@ nTipDescendants(tree)
 A vector whose entries correspond to internal nodes of the tree, and give the number of tip descendants of each node.
 }
 \description{
-Finds the number of tip descendants for each internal node of the tree
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
+Finds the number of tip descendants for each internal node of the tree. Used by configFind and configShow.
 }
 \examples{
-nTipDescendants(mytree)
-
+nTipDescendants(rtree4(10))
 
 }
 \author{
@@ -27,4 +24,5 @@ Michael Boyd \email{mboyd855@gmail.com}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
+\keyword{internal}
 

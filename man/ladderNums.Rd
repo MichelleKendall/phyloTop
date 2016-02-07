@@ -7,24 +7,18 @@
 ladderNums(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
 }
 \value{
-A vector of ladder numbers (clarify)
+A vector corresponding to tree edges and their ladder sizes
 }
 \description{
-Finds the ladder numbers
-Notes: needs to issue warning about input types.
-Adapt for phylo as well as phylo4?
-}
-\examples{
-ladderNums(rtree4(10))
-
-
+Finds the ladders and their positions in the tree, for plotting
 }
 \author{
 Michael Boyd \email{mboyd855@gmail.com}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 }
+\keyword{internal}
 
