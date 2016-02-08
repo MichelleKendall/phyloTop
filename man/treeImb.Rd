@@ -10,7 +10,7 @@ treeImb(tree)
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 }
 \value{
-A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches
+A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches. (Note that this is the transform of the output in version 1.0.0.)
 }
 \description{
 Finds the imbalance of descendants: for each node it gives the number of descendants from of each descendant branch.

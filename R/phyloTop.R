@@ -1,24 +1,26 @@
 #' phyloTop: calculating topological properties of phylogenies
 #' 
-#' Calculate a range of topological properties for one of more phylogenetic trees.
+#' Calculate a range of topological properties for one or more phylogenetic trees.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param treeList a \code{list} or \code{multiPhylo} object, or a single tree of class \code{phylo} or \code{phylo4}. All trees should be binary and rooted; if not they will be coerced into binary rooted trees using multi2di, if possible.
 #' @param funcs a list of functions. The default is to apply all of the topological functions from the package, but a subset can be specified instead. The functions available are:
 #' \itemize{
-#' \item avgLadder
-#' \item cherries
-#' \item colless.phylo
-#' \item ILnumber
-#' \item maxHeight
-#' \item pitchforks
-#' \item sackin.phylo
-#' \item stairs (note that this adds two columns to the output, "stairs1" and "stairs2")
+#' \item \code{\link{avgLadder}}
+#' \item \code{\link{cherries}}
+#' \item \code{\link{colless.phylo}}
+#' \item \code{\link{ILnumber}}
+#' \item \code{\link{maxHeight}}
+#' \item \code{\link{pitchforks}}
+#' \item \code{\link{sackin.phylo}}
+#' \item \code{\link{stairs}} (note that this adds two columns to the output, "stairs1" and "stairs2")
 #' }
 #' @return A matrix where rows correspond to trees and columns correspond to topological properties.
 #' 
 #' @import ape
+#' 
+#' @seealso \code{\link{avgLadder}}, \code{\link{cherries}}, \code{\link{colless.phylo}}, \code{\link{ILnumber}}, \code{\link{maxHeight}}, \code{\link{pitchforks}}, \code{\link{sackin.phylo}}, \code{\link{stairs}}
 #'   
 #' @examples
 #' ## Apply all of the functions to a list of 10 random trees, each with 50 tips:
@@ -26,7 +28,7 @@
 #' 
 #' 
 #' @export
-phyloTop <- function(treeList,funcs=NULL){
+phyloTop <- function(treeList,funcs="all"){
   
   # check input:
   if (!class(treeList) %in% c("list","multiPhylo")) stop("Please supply a list or multiPhylo object for treeList")
@@ -43,7 +45,7 @@ phyloTop <- function(treeList,funcs=NULL){
   
   allfuncs <- c("avgLadder","cherries","colless.phylo","ILnumber","maxHeight","pitchforks","sackin.phylo","stairs")
   
-  if (is.null(funcs)) {funcs <- allfuncs}
+  if (funcs=="all") {funcs <- allfuncs}
   else {
     # check each func is recognised
     for (i in funcs) {

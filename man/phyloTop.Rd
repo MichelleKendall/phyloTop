@@ -4,28 +4,28 @@
 \alias{phyloTop}
 \title{phyloTop: calculating topological properties of phylogenies}
 \usage{
-phyloTop(treeList, funcs = NULL)
+phyloTop(treeList, funcs = "all")
 }
 \arguments{
 \item{treeList}{a \code{list} or \code{multiPhylo} object, or a single tree of class \code{phylo} or \code{phylo4}. All trees should be binary and rooted; if not they will be coerced into binary rooted trees using multi2di, if possible.}
 
 \item{funcs}{a list of functions. The default is to apply all of the topological functions from the package, but a subset can be specified instead. The functions available are:
 \itemize{
-\item avgLadder
-\item cherries
-\item colless.phylo
-\item ILnumber
-\item maxHeight
-\item pitchforks
-\item sackin.phylo
-\item stairs (note that this adds two columns to the output, "stairs1" and "stairs2")
+\item \code{\link{avgLadder}}
+\item \code{\link{cherries}}
+\item \code{\link{colless.phylo}}
+\item \code{\link{ILnumber}}
+\item \code{\link{maxHeight}}
+\item \code{\link{pitchforks}}
+\item \code{\link{sackin.phylo}}
+\item \code{\link{stairs}} (note that this adds two columns to the output, "stairs1" and "stairs2")
 }}
 }
 \value{
 A matrix where rows correspond to trees and columns correspond to topological properties.
 }
 \description{
-Calculate a range of topological properties for one of more phylogenetic trees.
+Calculate a range of topological properties for one or more phylogenetic trees.
 }
 \examples{
 ## Apply all of the functions to a list of 10 random trees, each with 50 tips:
@@ -35,5 +35,8 @@ phyloTop(rmtree(10,50))
 }
 \author{
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{avgLadder}}, \code{\link{cherries}}, \code{\link{colless.phylo}}, \code{\link{ILnumber}}, \code{\link{maxHeight}}, \code{\link{pitchforks}}, \code{\link{sackin.phylo}}, \code{\link{stairs}}
 }
 

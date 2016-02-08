@@ -7,7 +7,7 @@
 avgLadder(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 }
 \value{
 The mean ladder size
@@ -23,5 +23,8 @@ avgLadder(rtree(20))
 }
 \author{
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{ladderSizes}}
 }
 
