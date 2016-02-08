@@ -8,7 +8,6 @@
 #' @return A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches
 #'
 #' @import ape
-#' @importFrom phangorn Children
 #' 
 #' @examples
 #' treeImb(rtree(10))
@@ -17,11 +16,18 @@
 treeImb <- function(tree) {
   tree <- phyloCheck(tree)
   ntips <- length(tree$tip.label)
-  configs <- nConfig(tree)$allsizes
-  imbalance <- t(sapply(1:(2*ntips-1), function(node) {
+  nn=tree$Nnode
+  Ancs=(ntips+1):(ntips+nn) 
+  
+  # for each internal node, find its immediate children 
+  Pointers=t(vapply(Ancs, function(x) tree$edge[tree$edge[,1]==x,2], FUN.VALUE=c(1,2))) 
+  
+  configs <- nConfig(tree)$cladeSizes
+  
+  imbalance <- t(sapply(Ancs, function(node) {
   if (node <= ntips) {return(c(0,0))}
   else {
-    children <- Children(tree,node)
+    children <- Pointers[node-ntips,]
     left <- configs[[children[[1]]]]
     right <- configs[[children[[2]]]]
     return(c(left,right))
