@@ -4,26 +4,30 @@
 \alias{ladderShow}
 \title{Show ladders}
 \usage{
-ladderShow(tree)
+ladderShow(tree, ladderCol = "red", ...)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+
+\item{ladderCol}{colour with which to highlight ladder branches (default is red)}
+
+\item{...}{further arguments to be passed to plot.phylo}
 }
 \value{
-A plot of the tree, with ladders highlighted in red.
+A plot of the tree, with ladders highlighted by colour.
 }
 \description{
 Plot a tree, highlighting any ladders within it
 }
 \examples{
 \dontrun{
-ladderShow(rtree(100))
+ladderShow(rtree(50), ladderCol="blue", edge.width=2)
 }
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
-
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+
+Michael Boyd \email{mboyd855@gmail.com}
 }
 
