@@ -6,13 +6,13 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @param k An integer between 1 and the number of tips (default is the number of tips), specifying the maximum clade size of interest.
+#' @param maxClade An integer between 1 and the number of tips (the default), specifying the maximum clade size of interest.
 #' @return A list with 2 entries: 
 #' \itemize{
-#' \item allsizes is a vector giving the size of the clade descending at each node. Tips all have the value 1. 
+#' \item cladeSizes is a vector giving the size of the clade descending at each node. Tips all have the value 1. 
 #' Internal nodes have their number of tip descendants. 
-#' \item firstk is a vector where firstk[[i]] is the number of clades of size i in the tree. 
-#' If k is specified then it outputs the first k of them; otherwise it gives all k <= number of tips
+#' \item numClades is a vector where numClades[[i]] is the number of clades of size i in the tree. 
+#' All clade sizes are calculated, but the output can be restricted using \code{maxClade} to just those of size up to 'maxClade'.
 #' }
 #' 
 #' @import ape
@@ -23,12 +23,13 @@
 #' 
 #' 
 #' @export
-nConfig <- function(tree,k=length(tree$tip.label)) { 
+nConfig <- function(tree,maxClade=NULL) { 
   tree <- phyloCheck(tree)
   if (is.null(tree$tip.label))
     stop("This tree has no tip labels")
   num.tips=length(tree$tip.label)
-  if(k > num.tips) {k <- num.tips} # k greater than number of tips makes no sense would otherwise append zeroes to "firstk" 
+  if (is.null(maxClade)) {maxClade <- num.tips}
+  else if(maxClade > num.tips) {maxClade <- num.tips} # maxClade greater than number of tips makes no sense and would append unnecessary zeroes to output
   labels=NA + 0*(1:(nrow(tree$edge)+1))
   names(labels)[1:num.tips]=tree$tip.label;
   names(labels)[(num.tips+1): length(labels)]=paste("node",1:(length(labels)-num.tips),sep="")
@@ -39,5 +40,7 @@ nConfig <- function(tree,k=length(tree$tip.label)) {
     TheseLabels = unlist(sapply(IsReady, function(x) sum(labels[tree$edge[tree$edge[,1]==x,2]])))
     labels[IsReady]=TheseLabels
   }
-  return(list(allsizes=labels,firstk=vapply(1:k, function(x) sum(labels==x),FUN.VALUE=1)))
+  numClades=vapply(1:maxClade, function(x) sum(labels==x),FUN.VALUE=1)
+  names(numClades) <- 1:maxClade
+  return(list(cladeSizes=labels,numClades=numClades))
 }
