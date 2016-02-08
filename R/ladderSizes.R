@@ -18,9 +18,8 @@
 #' 
 #' @examples
 #' ## Find ladder sizes in a random tree with 20 tips:
-#' \dontrun{ # known bug!
-#' ladderSizes(rtree(20))
-#' }
+#' tree <- rtree(20)
+#' ladderSizes(tree)
 #' 
 #' @export
 ladderSizes <- function(tree) {
@@ -29,22 +28,31 @@ ladderSizes <- function(tree) {
   nn=tree$Nnode
   Ancs=(ntip+1):(ntip+nn) # assumes tips are 1:ntip, then internal nodes
   
+  # for each internal node (numbered 1:(ntips-1) in the rows of "pointers"), find its immediate children 
   Pointers=t(vapply(Ancs, function(x) tree$edge[tree$edge[,1]==x,2], FUN.VALUE=c(1,2))) 
   
+  # create "DP": like pointers, but any tip is replaced with a zero, any internal node with a 1
   DP=Pointers
   DP[DP<=ntip]=0 
   DP[DP>ntip]=1
+  
   BrIsLadder=(rowSums(DP)==1) # which branches (1:nn) are ladders (1 or 0)
-  LadderBr=(1:nrow(DP))[BrIsLadder] # vector of only br that are ladder
+  LadderBr=(1:nrow(DP))[BrIsLadder] # vector of only br that are part of a ladder
   LadderNodes=ntip+LadderBr  # vector of NODES (orig node id) that are ladders
   allIsLadder=c(rep(0,ntip),BrIsLadder) # 0 for all tips, then 1 or 0 for internal nodes
   
   EL=rbind( cbind(LadderNodes, Pointers[LadderBr,1]),cbind(LadderNodes,Pointers[LadderBr,2])) # Ancestor, Descendant where Ancestor is a Ladder Node (but fast as no finding in the edgelist).
   ToKeep=allIsLadder[EL[,2]] # 1 only where second col of EL is a ladder node
   EdgeList=EL[ToKeep==1,]     # only keep edges where ancestor and des are ladd
+  if (length(EdgeList)==0) {warning("No ladders in tree") 
+    return(list(ladderSizes=0,ladderBr=NULL))}
+  else {
+  EdgeList <- t(as.data.frame(EdgeList)) # prevents problems when there is only one row
   chEL=matrix(data="hi",nrow=nrow(EdgeList),ncol=2) # coerce to format for graph
   chEL[,1]=paste("v",as.character(EdgeList[,1]),sep="") 
   chEL[,2]=paste("v",as.character(EdgeList[,2]),sep="")
   gr=graph_from_edgelist(chEL)
-  return(components(gr)$csize) # sizes of different ladder components
+  ladderSizes <- components(gr)$csize # sizes of different ladder components
+  return(list(ladderSizes=ladderSizes,ladderBr=LadderBr) )
+  }
 }

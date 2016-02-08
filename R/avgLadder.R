@@ -11,13 +11,12 @@
 #'
 #' @examples
 #' ## Find the average ladder size in a random tree with 20 tips:
-#' \dontrun{ # known bug!
 #' avgLadder(rtree(20))
-#' }
+#' 
 #'
 #' @export
 avgLadder <- function(tree) {
-  l <- ladderSizes(tree)
+  l <- ladderSizes(tree)$ladderSizes
   if (length(l)==0) stop("No ladders in this tree")
   return(mean(l))
 }
