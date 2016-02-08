@@ -24,7 +24,7 @@ treeImb <- function(tree) {
   
   configs <- nConfig(tree)$cladeSizes
   
-  imbalance <- t(sapply(Ancs, function(node) {
+  imbalance <- t(sapply(c(1:ntips,Ancs), function(node) {
   if (node <= ntips) {return(c(0,0))}
   else {
     children <- Pointers[node-ntips,]
