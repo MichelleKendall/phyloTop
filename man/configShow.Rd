@@ -4,12 +4,16 @@
 \alias{configShow}
 \title{Plot a tree highlighting configurations}
 \usage{
-configShow(tree, configSize)
+configShow(tree, configSize, mainCol = "black", configCol = "red", ...)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo4}}
 
-\item{configSize}{an integer giving the configuration size of interest.}
+\item{configSize}{an integer giving the configuration size of interest}
+
+\item{mainCol}{colour for branches which are not in configurations of the chosen size (default is black)}
+
+\item{configCol}{colour for branches which are in such configurations (default is red)}
 }
 \value{
 A plot of the tree, highlighting the configurations of the given size.
@@ -18,15 +22,15 @@ A plot of the tree, highlighting the configurations of the given size.
 Plots the tree with configurations of a given size highlighted.
 }
 \examples{
-## Highlight pitchforks in a random tree:
+## Highlight pitchforks in a random tree with 20 tips:
 \dontrun{
-configShow(rtree(20),3)
+configShow(rtree(20),3, edge.width=2)
 }
 
 }
 \author{
-Michael Boyd \email{mboyd855@gmail.com}
-
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+
+Michael Boyd \email{mboyd855@gmail.com}
 }
 
