@@ -9,7 +9,6 @@
 #' @return Two integers, corresponding to the number of tip descendants of each of the node's descending branches.
 #' 
 #' @import ape
-#' @importFrom phangorn Children
 #'   
 #' @examples
 #' ## Find the imbalance of node 16 in a random tree with 10 tips:
@@ -22,9 +21,16 @@ nodeImb <- function(tree,node) {
   ntips <- length(tree$tip.label)
   if (node > (2*ntips-1)) {stop(paste0("Please supply a valid node number between 1 and ",(2*ntips-1)))}
   if (node <= ntips) {return(c(0,0))}
+  
   else {
-    configs <- nConfig(tree)$allsizes
-    children <- Children(tree,node)
+    nn=tree$Nnode
+    Ancs=(ntips+1):(ntips+nn) 
+    
+    # for each internal node, find its immediate children 
+    Pointers=t(vapply(Ancs, function(x) tree$edge[tree$edge[,1]==x,2], FUN.VALUE=c(1,2))) 
+    
+    configs <- nConfig(tree)$cladeSizes
+    children <- Pointers[node-ntips,]
     left <- configs[[children[[1]]]]
     right <- configs[[children[[2]]]]
     return(c(left,right))
