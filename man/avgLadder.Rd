@@ -17,9 +17,8 @@ Finds the mean size of ladders in the tree
 }
 \examples{
 ## Find the average ladder size in a random tree with 20 tips:
-\dontrun{ # known bug!
 avgLadder(rtree(20))
-}
+
 
 }
 \author{

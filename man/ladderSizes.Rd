@@ -20,9 +20,8 @@ each of which has exactly one tip descendant.
 }
 \examples{
 ## Find ladder sizes in a random tree with 20 tips:
-\dontrun{ # known bug!
-ladderSizes(rtree(20))
-}
+tree <- rtree(20)
+ladderSizes(tree)
 
 }
 \author{
