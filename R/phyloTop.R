@@ -1,0 +1,131 @@
+#' phyloTop: calculating topological properties of phylogenies
+#' 
+#' Calculate a range of topological properties for one of more phylogenetic trees.
+#' 
+#' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
+#'   
+#' @param treeList a \code{list} or \code{multiPhylo} object, or a single tree of class \code{phylo} or \code{phylo4}. All trees should be binary and rooted; if not they will be coerced into binary rooted trees using multi2di, if possible.
+#' @param funcs a list of functions. The default is to apply all of the topological functions from the package, but a subset can be specified instead. The functions available are:
+#' \itemize{
+#' \item avgLadder
+#' \item cherries
+#' \item colless.phylo
+#' \item ILnumber
+#' \item maxHeight
+#' \item pitchforks
+#' \item sackin.phylo
+#' \item stairs (note that this adds two columns to the output, "stairs1" and "stairs2")
+#' }
+#' @return A matrix where rows correspond to trees and columns correspond to topological properties.
+#' 
+#' @import ape
+#'   
+#' @examples
+#' ## Apply all of the functions to a list of 10 random trees, each with 10 tips:
+#' phyloTop(rmtree(10,10))
+#' 
+#' 
+#' @export
+phyloTop <- function(treeList,funcs=NULL){
+  
+  # check input:
+  if (!class(treeList) %in% c("list","multiPhylo")) stop("Please supply a list or multiPhylo object for treeList")
+
+  # functions which return an integer tree statistic, and their dependencies:
+  # avgLadder (ladderSizes)
+  # cherries (nConfig)
+  # colless.phylo (treeImb, nConfig)
+  # ILnumber (treeImb, nConfig)
+  # maxHeight (getDepths)
+  # pitchforks (nConfig)
+  # sackin.phylo (getDepths)
+  # stairs(1 and 2) (treeImb, nConfig)
+  
+  allfuncs <- c("avgLadder","cherries","colless.phylo","ILnumber","maxHeight","pitchforks","sackin.phylo","stairs")
+  
+  if (is.null(funcs)) {funcs <- allfuncs}
+  else {
+    # check each func is recognised
+    for (i in funcs) {
+      if (!i %in% allfuncs) {
+        stop(paste0("Function '",i,"' not recognised."))
+      }
+    }
+    # put in alphabetical order, mainly because "stairs" needs to be at the end!
+    funcs <- sort(funcs)
+  }
+  
+  
+  
+  # initialise matrix
+  # if "stairs" is requested, need two columns for it
+  if ("stairs" %in% funcs) {treeSummaries <- matrix(nrow=length(treeList),ncol=(length(funcs)+1),0)
+  colnames(treeSummaries) <- c(setdiff(funcs,"stairs"),"stairs1","stairs2")}
+  
+  else {treeSummaries <- matrix(nrow=length(treeList),ncol=length(funcs),0)
+  colnames(treeSummaries) <- funcs }
+
+  
+  # go through each tree at a time
+  for (i in 1:length(treeList)) {
+    # get the functions which are reused
+    # can we be more efficient than this repeated calling of phyloCheck?
+    if (any(is.element(c("maxHeight", "sackin.phylo"),funcs))) {depths <- getDepths(treeList[[i]]) }
+    if (any(is.element(c("cherries", "colless.phylo","ILnumber","pitchforks","stairs"),funcs))) {
+      
+      nConfig <- nConfig(treeList[[i]])
+      
+      # and find treeImb without recalling nConfig:
+      ntips <- length(treeList[[i]]$tip.label)
+      configs <- nConfig$cladeSizes
+      imbalance <- t(sapply(1:(2*ntips-1), function(node) {
+        if (node <= ntips) {return(c(0,0))}
+        else {
+          children <- Children(treeList[[i]],node)
+          left <- configs[[children[[1]]]]
+          right <- configs[[children[[2]]]]
+          return(c(left,right))
+        }
+      }))
+      treeImb <- imbalance}
+    
+    
+    # apply each function
+    for (j in funcs) {
+      if (j=="avgLadder") { l <- ladderSizes(treeList[[i]])$ladderSizes
+                            if (length(l)==0) {treeSummaries[i,j] <- 0} 
+                            else treeSummaries[i,j] <- mean(l)}
+      
+      if (j=="cherries") { treeSummaries[i,j] <- nConfig$numClades[[2]]}
+      
+      else if (j=="colless.phylo") { if (ntips==2) {treeSummaries[i,j] <- 0 }
+                                else diffs <- abs(apply(treeImb,1,diff))
+                                n <- ((ntips-1)*(ntips-2))/2
+                                treeSummaries[i,j] <- sum(diffs)/n
+      }
+      
+      else if (j=="ILnumber") {NDs <- treeImb[(ntips+1):(2*ntips-1),]
+                               treeSummaries[i,j] <- sum(apply(NDs,1, function(x) sum(x==1)==1))
+      }
+      
+      else if (j=="maxHeight") {heights <- depths$tipDepths
+                                treeSummaries[i,j] <- max(heights)
+      }
+      
+      else if (j=="pitchforks") { treeSummaries[i,j] <- nConfig$numClades[[3]]}
+      
+      else if (j=="sackin.phylo") {tipDepths <- depths$tipDepths - 1
+                                   treeSummaries[i,j] <- sum(tipDepths)
+      }
+      
+      else if (j=="stairs") {NDs <- treeImb[(ntips + 1):(2 * ntips - 1),]
+                             stair1 <- (1/(ntips - 1)) * sum(abs(NDs[2, ] - NDs[1, ]))
+                             stair2 <- (1/(ntips - 1)) * sum(pmin(NDs[2, ], NDs[1, ])/pmax(NDs[2, ], NDs[1, ]))
+                             treeSummaries[i,"stairs1"] <- stair1
+                             treeSummaries[i,"stairs2"] <- stair2
+      }
+    }
+  }
+  return(as.data.frame(treeSummaries))
+}
+
