@@ -6,22 +6,25 @@
 #' @author Michael Boyd \email{mboyd855@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}
-#' @param ladderCol colour with which to highlight ladder branches (default is red)
+#' @param mainCol colour for branches which are not ladders (default is black)
+#' @param ladderCol colour for ladder branches (default is red)
 #' @param ... further arguments to be passed to plot.phylo
 #' @return A plot of the tree, with ladders highlighted by colour.
 #'   
 #' @import ape
 #' @examples
+#' ## Highlight in blue the ladders in a random tree with 50 tips:
 #' \dontrun{
 #' ladderShow(rtree(50), ladderCol="blue", edge.width=2)
 #' }
 #' 
 #' @export
-ladderShow <- function(tree, ladderCol="red", ...) {
+ladderShow <- function(tree, mainCol="black", ladderCol="red", ...) {
+  tree <- phyloCheck(tree)
   edgeList <- tree$edge
   nEdges <- length(tree$edge[,1])
   ladderBranches <- ladderSizes(tree)$ladderBr
-  col <- rep('black',nEdges)
+  col <- rep(mainCol,nEdges)
   # If the ladder number is at least one make the edge red
   for (i in ladderBranches) {
     col[i] <- ladderCol
