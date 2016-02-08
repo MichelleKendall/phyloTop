@@ -5,7 +5,7 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @return A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches
+#' @return A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches. (Note that this is the transform of the output in version 1.0.0.)
 #'
 #' @import ape
 #' 
