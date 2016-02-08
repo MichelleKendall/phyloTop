@@ -9,6 +9,7 @@
 #' @param configSize an integer giving the configuration size of interest
 #' @param mainCol colour for branches which are not in configurations of the chosen size (default is black)
 #' @param configCol colour for branches which are in such configurations (default is red)
+#' @param ... further arguments to be passed to plot.phylo
 #' @return A plot of the tree, highlighting the configurations of the given size.
 #' 
 #' @import ape

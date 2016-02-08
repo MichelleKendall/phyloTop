@@ -28,8 +28,8 @@ A matrix where rows correspond to trees and columns correspond to topological pr
 Calculate a range of topological properties for one of more phylogenetic trees.
 }
 \examples{
-## Apply all of the functions to a list of 10 random trees, each with 10 tips:
-phyloTop(rmtree(10,10))
+## Apply all of the functions to a list of 10 random trees, each with 50 tips:
+phyloTop(rmtree(10,50))
 
 
 }

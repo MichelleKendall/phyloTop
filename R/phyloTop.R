@@ -21,8 +21,8 @@
 #' @import ape
 #'   
 #' @examples
-#' ## Apply all of the functions to a list of 10 random trees, each with 10 tips:
-#' phyloTop(rmtree(10,10))
+#' ## Apply all of the functions to a list of 10 random trees, each with 50 tips:
+#' phyloTop(rmtree(10,50))
 #' 
 #' 
 #' @export
@@ -77,11 +77,17 @@ phyloTop <- function(treeList,funcs=NULL){
       
       # and find treeImb without recalling nConfig:
       ntips <- length(treeList[[i]]$tip.label)
+      nn=treeList[[i]]$Nnode
+      Ancs=(ntips+1):(ntips+nn) 
+      
+      # for each internal node, find its immediate children 
+      Pointers=t(vapply(Ancs, function(x) treeList[[i]]$edge[treeList[[i]]$edge[,1]==x,2], FUN.VALUE=c(1,2))) 
+      
       configs <- nConfig$cladeSizes
-      imbalance <- t(sapply(1:(2*ntips-1), function(node) {
+      imbalance <- t(sapply(c(1:ntips,Ancs), function(node) {
         if (node <= ntips) {return(c(0,0))}
         else {
-          children <- Children(treeList[[i]],node)
+          children <- Pointers[node-ntips,]
           left <- configs[[children[[1]]]]
           right <- configs[[children[[2]]]]
           return(c(left,right))

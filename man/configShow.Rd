@@ -14,6 +14,8 @@ configShow(tree, configSize, mainCol = "black", configCol = "red", ...)
 \item{mainCol}{colour for branches which are not in configurations of the chosen size (default is black)}
 
 \item{configCol}{colour for branches which are in such configurations (default is red)}
+
+\item{...}{further arguments to be passed to plot.phylo}
 }
 \value{
 A plot of the tree, highlighting the configurations of the given size.
