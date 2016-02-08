@@ -30,11 +30,12 @@ nConfig <- function(tree,maxClade=NULL) {
   num.tips=length(tree$tip.label)
   if (is.null(maxClade)) {maxClade <- num.tips}
   else if(maxClade > num.tips) {maxClade <- num.tips} # maxClade greater than number of tips makes no sense and would append unnecessary zeroes to output
-  labels=NA + 0*(1:(nrow(tree$edge)+1))
+  labels <- rep(NA, nrow(tree$edge)+1)
   names(labels)[1:num.tips]=tree$tip.label;
   names(labels)[(num.tips+1): length(labels)]=paste("node",1:(length(labels)-num.tips),sep="")
   labels[1:num.tips]=1     # tips are 1 here. 
   NodeIDS= (num.tips + 1) : (2*num.tips -1)
+  # fill in the configuration sizes of internal nodes
   while (any(is.na(labels))) { 
     IsReady = NodeIDS[ vapply(NodeIDS,function(x) !any(is.na(labels[tree$edge[which(tree$edge[,1]==x),2]])) & is.na(labels[x])  ,FUN.VALUE=TRUE) ]
     TheseLabels = unlist(sapply(IsReady, function(x) sum(labels[tree$edge[tree$edge[,1]==x,2]])))

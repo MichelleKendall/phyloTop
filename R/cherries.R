@@ -18,5 +18,5 @@
 #' @export
 cherries<-function(tree) {
   tree <- phyloCheck(tree)
-  nConfig(tree)$firstk[[2]]
+  nConfig(tree)$numClades[[2]]
   }

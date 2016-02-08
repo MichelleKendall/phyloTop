@@ -18,5 +18,5 @@
 #' @export
 pitchforks<-function(tree) {
   tree <- phyloCheck(tree)
-  nConfig(tree)$firstk[[3]]
+  nConfig(tree)$numClades[[3]]
 }
