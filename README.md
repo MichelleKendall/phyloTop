@@ -5,7 +5,7 @@ Calculating topological properties of phylogenies
 
 The package ‘phyloTop’ was removed from the CRAN repository and archived on 29/10/2015 as it was no longer maintained by its creator, Michael Boyd.
 
-I am reviving the package and speeding up some of the computations.
+Together with Caroline Colijn, I am reviving the package and speeding up some of the computations.
 
 # Updates
 
