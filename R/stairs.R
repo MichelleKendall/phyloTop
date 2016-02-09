@@ -1,17 +1,21 @@
 #' Stairs
 #' 
-#' Calculates the stair numbers
+#' Calculates the staircase-ness measure
 #' 
 #' @author Michael Boyd \email{mboyd855@gmail.com}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @return The stair numbers for a tree
+#' @return The staircase-ness measures for a tree. Defined in Norstrom et al., Evolutionary Bioinformatics online, 8:261 (2012) \url{doi::10.4137/EBO.S9738}, there are two related measures:
+#' \itemize{ 
+#' \item 1: `the proportion of sub-trees that are imbalanced (i.e., sub-trees where the left child contains more leaves than the right child, or vice-versa)'
+#' \item 2:  `the average of all the min(l,r)/max(l,r) values of each sub-tree, where l and r are the number of leaves in the left and right children of a subtree.'
+#' }
 #' 
 #' @import ape
 #'   
 #' @examples
-#' ## Find the stair numbers in a random tree with 20 tips:
+#' ## Find the staircase-ness measures in a random tree with 20 tips:
 #' stairs(rtree(20))
 #'  
 #' 
