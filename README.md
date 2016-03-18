@@ -5,15 +5,15 @@ Calculating topological properties of phylogenies
 
 The package ‘phyloTop’ was removed from the CRAN repository and archived on 29/10/2015 as it was no longer maintained by its creator, Michael Boyd.
 
-Together with Caroline Colijn, I am reviving the package and speeding up some of the computations.
+I am reviving the package, speeding up some of the computations, simplifying the format requirements and dependencies, and adding help files and examples.
 
 # Updates
 
-18/03/2016: Functions avgLadder, cherries, ILnumber, maxHeight, pitchforks, and sackin.phylo now contain normalisation options - thanks to Giacomo Plazzotta for providing me with their maximum values. Errors arising from submitting a tree with two tips to the tree statistic functions have now been removed - thanks to Scott Ward for spotting this problem and supplying the code fixes.
+18/03/2016: Functions avgLadder, cherries, ILnumber, maxHeight, pitchforks, and sackin.phylo now contain normalisation options - thanks to Giacomo Plazzotta for providing me with their maximum values. Errors arising from submitting a tree with two tips to the tree statistic functions have now been removed - thanks to Scott Ward for spotting this problem and supplying code fixes.
 
 08/02/2016: Package now includes a function called "phyloTop" which takes a list of trees and applies a variety of topological functions (faster than calling each function individually). Deprecated functions issue warnings. configShow and ladderShow now use the faster implementations of nConfig and ladderSizes, and phylo rather than phylo4 format. Dependency on phangorn removed.
 
-07/02/2016: version 2.0.0. Some functions removed, renamed or changed, so that the package is not entirely backwards compatible. The remaining functions accept both phylo and phylo4 objects, and are documented. The functions nConfig, ladderSizes and getDepths (on which most of the others depend) have been freshly implemented by Caroline Colijn and are significantly faster.
+07/02/2016: version 2.0.0. Some functions removed, renamed or changed: the package is not backwards compatible. The remaining functions accept both phylo and phylo4 objects, and are documented. The functions nConfig, ladderSizes and getDepths (on which most of the others depend) have been freshly implemented by Caroline Colijn and are significantly faster.
 
 16/12/2015: approximately half of the functions checked and documented. Package not yet stable.
 
