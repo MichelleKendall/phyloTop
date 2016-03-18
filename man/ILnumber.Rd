@@ -4,10 +4,12 @@
 \alias{ILnumber}
 \title{IL number}
 \usage{
-ILnumber(tree)
+ILnumber(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 The integer number of internal nodes with a single tip child.
@@ -16,7 +18,9 @@ The integer number of internal nodes with a single tip child.
 Computes the number of internal nodes with a single tip child.
 }
 \examples{
-ILnumber(rtree(10))
+tree <- rtree(10)
+ILnumber(tree)
+ILnumber(tree, normalise=TRUE)
 
 }
 \author{

@@ -4,10 +4,12 @@
 \alias{maxHeight}
 \title{Maximum tree height}
 \usage{
-maxHeight(tree)
+maxHeight(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo4}}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 An integer giving the maximum height of tips in the tree.
@@ -17,8 +19,9 @@ Find the maximum height of tips in the tree.
 }
 \examples{
 ## Maximum height of tips in a random tree:
-maxHeight(rtree(10))
-
+tree <- rtree(10)
+maxHeight(tree) 
+maxHeight(tree, normalise=TRUE)
 
 }
 \author{

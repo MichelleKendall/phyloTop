@@ -4,10 +4,12 @@
 \alias{sackin.phylo}
 \title{Sackin index}
 \usage{
-sackin.phylo(tree)
+sackin.phylo(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 The Sackin index of the tree.
@@ -20,6 +22,8 @@ we include this simple function here for convenience within this package, and fo
 \examples{
 ## Sackin index of a random tree with 10 tips:
 sackin.phylo(rtree(10))
+## normalised Sackin index (between 0 and 1):
+sackin.phylo(rtree(10), normalise=TRUE)
 
 
 }

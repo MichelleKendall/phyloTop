@@ -4,10 +4,12 @@
 \alias{pitchforks}
 \title{Number of pitchforks}
 \usage{
-pitchforks(tree)
+pitchforks(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 An integer representing the number of pitchforks in the tree.
@@ -19,6 +21,7 @@ Finds the number of pitchforks in a tree. A pitchfork is considered to be a clad
 tree <- rtree(10)
 plot(tree)
 pitchforks(tree)
+pitchforks(tree, normalise=TRUE)
 
 
 }

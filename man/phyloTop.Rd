@@ -4,7 +4,7 @@
 \alias{phyloTop}
 \title{phyloTop: calculating topological properties of phylogenies}
 \usage{
-phyloTop(treeList, funcs = "all")
+phyloTop(treeList, funcs = "all", normalise = FALSE)
 }
 \arguments{
 \item{treeList}{a \code{list} or \code{multiPhylo} object, or a single tree of class \code{phylo} or \code{phylo4}. All trees should be binary and rooted; if not they will be coerced into binary rooted trees using multi2di, if possible.}
@@ -20,6 +20,8 @@ phyloTop(treeList, funcs = "all")
 \item \code{\link{sackin.phylo}}
 \item \code{\link{stairs}} (note that this adds two columns to the output, "stairs1" and "stairs2")
 }}
+
+\item{normalise}{option to normalise the results of functions where possible. Default is \code{FALSE}}
 }
 \value{
 A matrix where rows correspond to trees and columns correspond to topological properties.
@@ -30,6 +32,8 @@ Calculate a range of topological properties for one or more phylogenetic trees.
 \examples{
 ## Apply all of the functions to a list of 10 random trees, each with 50 tips:
 phyloTop(rmtree(10,50))
+## Normalising the results where possible:
+phyloTop(rmtree(10,50), normalise=TRUE)
 
 
 }

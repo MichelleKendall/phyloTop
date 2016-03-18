@@ -6,6 +6,7 @@
 #' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #'   
 #' @param tree a tree of class \code{phylo4}
+#' @param normalise option to normalise the result, default is \code{FALSE}
 #' @return An integer giving the maximum height of tips in the tree.
 #' 
 #' @import ape
@@ -14,12 +15,14 @@
 #' 
 #' @examples
 #' ## Maximum height of tips in a random tree:
-#' maxHeight(rtree(10))
-#' 
+#' tree <- rtree(10)
+#' maxHeight(tree) 
+#' maxHeight(tree, normalise=TRUE)
 #' 
 #' @export
-maxHeight<-function(tree){
+maxHeight<-function(tree, normalise=FALSE){
   heights <- getDepths(tree)$tipDepths
-  return(max(heights))
+  if (normalise==FALSE) {return(max(heights))}
+  else {return(max(heights)/(length(tree$tip.label) - 1))}
 }
 

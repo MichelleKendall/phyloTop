@@ -4,10 +4,12 @@
 \alias{avgLadder}
 \title{Average ladder size}
 \usage{
-avgLadder(tree)
+avgLadder(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 The mean ladder size
@@ -17,7 +19,9 @@ Finds the mean size of ladders in the tree
 }
 \examples{
 ## Find the average ladder size in a random tree with 20 tips:
-avgLadder(rtree(20))
+tree <- rtree(20)
+avgLadder(tree)
+avgLadder(tree, normalise=TRUE)
 
 
 }

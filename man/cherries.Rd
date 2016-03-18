@@ -4,10 +4,12 @@
 \alias{cherries}
 \title{Cherry number}
 \usage{
-cherries(tree)
+cherries(tree, normalise = FALSE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+
+\item{normalise}{option to normalise the result, default is \code{FALSE}}
 }
 \value{
 An integer representing the number of cherries in the tree.
@@ -19,6 +21,7 @@ Finds the number of cherries in a tree. A cherry is considered to be a pair of s
 tree <- rtree(10)
 plot(tree)
 cherries(tree)
+cherries(tree, normalise=TRUE)
 
 
 }
