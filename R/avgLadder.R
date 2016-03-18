@@ -22,7 +22,10 @@
 #' @export
 avgLadder <- function(tree, normalise=FALSE) {
   l <- ladderSizes(tree)$ladderSizes
-  if (length(l)==0) warning("No ladders in this tree")
   if (normalise==FALSE) {return(mean(l))}
-  else {return(mean(l)/(length(tree$tip.label)-2))}
+  else {
+    ntips <- length(tree$tip.label)
+    if (ntips==2) {return(0)}
+    else return(mean(l)/(ntips-2))
+    }
 }

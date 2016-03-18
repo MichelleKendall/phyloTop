@@ -110,7 +110,10 @@ phyloTop <- function(treeList,funcs="all", normalise=FALSE){
                             if (length(l)==0) {treeSummaries[i,j] <- 0} 
                             else {
                               if (normalise==FALSE) {treeSummaries[i,j] <- mean(l) }
-                              else {treeSummaries[i,j] <- mean(l)/(ntips-2) }
+                              else {
+                                if (ntips==2) {treeSummaries[i,j] <- 0 }
+                                else {treeSummaries[i,j] <- mean(l)/(ntips-2) }
+                              }
                             }
       }
       
@@ -126,9 +129,11 @@ phyloTop <- function(treeList,funcs="all", normalise=FALSE){
                                 }
         }
       else if (j=="ILnumber") {
-        NDs <- treeImb[(ntips+1):(2*ntips-1),]
-        if (normalise==FALSE) {treeSummaries[i,j] <- sum(apply(NDs,1, function(x) sum(x==1)==1))}
-        else {treeSummaries[i,j] <- (sum(apply(NDs,1, function(x) sum(x==1)==1)))/(ntips-2)}
+        if (ntips==2) {treeSummaries[i,j] <- 0} # if N=2 the result is 0 (and we should not try to normalise it!)
+        else {NDs <- treeImb[(ntips+1):(2*ntips-1),]
+              if (normalise==FALSE) {treeSummaries[i,j] <- sum(apply(NDs,1, function(x) sum(x==1)==1))}
+              else {treeSummaries[i,j] <- (sum(apply(NDs,1, function(x) sum(x==1)==1)))/(ntips-2)}
+        }
       }
       
       else if (j=="maxHeight") {
@@ -138,7 +143,8 @@ phyloTop <- function(treeList,funcs="all", normalise=FALSE){
       }
       
       else if (j=="pitchforks") { 
-        if (normalise==FALSE) {treeSummaries[i,j] <- nConfig$numClades[[3]]}
+        if (ntips==2) { treeSummaries[i, j] <- 0 }
+        else if (normalise==FALSE) {treeSummaries[i,j] <- nConfig$numClades[[3]]}
         else {treeSummaries[i,j] <- 3*nConfig$numClades[[3]]/ntips}
       }
       
@@ -149,11 +155,17 @@ phyloTop <- function(treeList,funcs="all", normalise=FALSE){
                                    
       }
       
-      else if (j=="stairs") {NDs <- treeImb[(ntips + 1):(2 * ntips - 1),]
-                             stair1 <- (1/(ntips - 1)) * sum(abs(NDs[2, ] - NDs[1, ]))
-                             stair2 <- (1/(ntips - 1)) * sum(pmin(NDs[2, ], NDs[1, ])/pmax(NDs[2, ], NDs[1, ]))
-                             treeSummaries[i,"stairs1"] <- stair1
-                             treeSummaries[i,"stairs2"] <- stair2
+      else if (j=="stairs") {
+        if(ntips==2){
+          treeSummaries[i, "stairs1"] <- 0
+          treeSummaries[i, "stairs2"] <- 1
+        }
+        else {NDs <- treeImb[(ntips + 1):(2 * ntips - 1),]
+              stair1 <- (1/(ntips - 1)) * sum(abs(NDs[2, ] - NDs[1, ]))
+              stair2 <- (1/(ntips - 1)) * sum(pmin(NDs[2, ], NDs[1, ])/pmax(NDs[2, ], NDs[1, ]))
+              treeSummaries[i,"stairs1"] <- stair1
+              treeSummaries[i,"stairs2"] <- stair2
+        }
       }
     }
   }

@@ -20,6 +20,8 @@
 #' @export
 pitchforks<-function(tree, normalise=FALSE) {
   tree <- phyloCheck(tree)
+  ntips <- length(tree$tip.label)
+  if (ntips==2) {return(0)}
   if (normalise==FALSE) {return(nConfig(tree)$numClades[[3]])}
-  else {return(3*nConfig(tree)$numClades[[3]]/length(tree$tip.label))}
+  else {return(3*nConfig(tree)$numClades[[3]]/ntips)}
 }

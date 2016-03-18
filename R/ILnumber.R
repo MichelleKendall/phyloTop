@@ -20,7 +20,10 @@
 ILnumber <- function(tree, normalise=FALSE) {
   tree <- phyloCheck(tree)
   N <- length(tree$tip.label)
-  NDs <- treeImb(tree)[(N+1):(2*N-1),]
-  if (normalise==FALSE) { return(sum(apply(NDs,1, function(x) sum(x==1)==1))) }
-  else { return(sum(apply(NDs,1, function(x) sum(x==1)==1))/(N-2)) }
+  if (N==2) {return(0)} # if N=2 the result is 0 (and we should not try to normalise it!)
+  else {
+    NDs <- treeImb(tree)[(N+1):(2*N-1),]
+    if (normalise==FALSE) { return(sum(apply(NDs,1, function(x) sum(x==1)==1))) }
+    else { return(sum(apply(NDs,1, function(x) sum(x==1)==1))/(N-2)) }
+  }
 }

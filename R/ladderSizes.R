@@ -44,8 +44,7 @@ ladderSizes <- function(tree) {
   EL=rbind( cbind(LadderNodes, Pointers[LadderBr,1]),cbind(LadderNodes,Pointers[LadderBr,2])) # Ancestor, Descendant where Ancestor is a Ladder Node (but fast as no finding in the edgelist).
   ToKeep=allIsLadder[EL[,2]] # 1 only where second col of EL is a ladder node
   EdgeList=EL[ToKeep==1,]     # only keep edges where ancestor and des are ladd
-  if (length(EdgeList)==0) {warning("No ladders in tree") 
-    return(list(ladderSizes=0,ladderBr=NULL))}
+  if (length(EdgeList)==0) {return(list(ladderSizes=0,ladderBr=NULL))}
   else {
   EdgeList <- t(as.data.frame(EdgeList)) # prevents problems when there is only one row
   chEL=matrix(data="hi",nrow=nrow(EdgeList),ncol=2) # coerce to format for graph
