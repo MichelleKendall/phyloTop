@@ -9,6 +9,8 @@ I am reviving the package, speeding up some of the computations, simplifying the
 
 # Updates
 
+15/04/2016: Added functions makeEpiRecord, getLabGenealogy and makePhyloTree (internal). Functions sortmyepi and makeTransTree are deprecated as they are no longer needed after these updates.
+
 18/03/2016: Functions avgLadder, cherries, ILnumber, maxHeight, pitchforks, and sackin.phylo now contain normalisation options - thanks to Giacomo Plazzotta for providing me with their maximum values. Errors arising from submitting a tree with two tips to the tree statistic functions have now been removed - thanks to Scott Ward for spotting this problem and supplying code fixes.
 
 08/02/2016: Package now includes a function called "phyloTop" which takes a list of trees and applies a variety of topological functions (faster than calling each function individually). Deprecated functions issue warnings. configShow and ladderShow now use the faster implementations of nConfig and ladderSizes, and phylo rather than phylo4 format. Dependency on phangorn removed.
