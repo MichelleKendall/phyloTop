@@ -71,6 +71,11 @@ laddItr <- function(...) {
   .Deprecated("ladderSizes", package="phyloTop")
 }
 
+makeTransTree <- function(...) {
+  .Deprecated("phyloTop", package="phyloTop", 
+              "Function deprecated: use instead the new function makeEpiRecord")
+}
+
 nDescendants <- function(...) {
   .Deprecated("phyloTop", package="phyloTop",
               "Function deprecated: number of descendants is handled within the relevant functions.")
@@ -96,6 +101,11 @@ nTipDescendants <- function(...) {
 
 rootLaddDist <- function(...) {
   .Deprecated("ladderSizes", package="phyloTop")
+}
+
+sortmyepi <- function(...) {
+  .Deprecated("phyloTop", package="phyloTop",
+              "Function deprecated: now a single line within makelabgenealogy")
 }
 
 subtreeShow <- function(...) {
