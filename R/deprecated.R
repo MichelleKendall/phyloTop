@@ -90,6 +90,11 @@ nodeApply <- function(...) {
               "Function deprecated: no longer needed now that functions use phylo objects.")
 }
 
+nodeFrac <- function(...) {
+  .Deprecated("phyloTop", package="phyloTop",
+              "Function deprecated. See nodeImbFrac and nodeDepthFrac for new node threshold functions.")
+}
+
 nTipChildren <- function(...) {
   .Deprecated("nConfig", package="phyloTop")
 }

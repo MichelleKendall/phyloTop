@@ -13,7 +13,10 @@
 #'   
 #' @examples
 #' ## Find the depth of node 34 in a random tree with 20 tips:
-#' nodeDepth(rtree(20),34)
+#' tree <- rtree(20)
+#' plot(tree)
+#' nodelabels()
+#' nodeDepth(tree,34)
 #'  
 #' 
 #' @export
@@ -21,6 +24,6 @@ nodeDepth <- function(tree,node) {
   depths <- getDepths(tree)
   allDepths <- c(depths$tipDepths,depths$nodeDepths)
   l <- length(allDepths)
-  if (node >= l) stop(paste0("Please supply a valid node number between 1 and ",l))
+  if (node > l) stop(paste0("Please supply a valid node number between 1 and ",l))
   return(allDepths[[node]])
 }

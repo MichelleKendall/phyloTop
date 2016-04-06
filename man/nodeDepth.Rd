@@ -20,7 +20,10 @@ Determines the depth of a particular node in a tree, defined as the number of ed
 }
 \examples{
 ## Find the depth of node 34 in a random tree with 20 tips:
-nodeDepth(rtree(20),34)
+tree <- rtree(20)
+plot(tree)
+nodelabels()
+nodeDepth(tree,34)
  
 
 }

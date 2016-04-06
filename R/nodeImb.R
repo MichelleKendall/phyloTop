@@ -12,7 +12,10 @@
 #'   
 #' @examples
 #' ## Find the imbalance of node 16 in a random tree with 10 tips:
-#' nodeImb(rtree(10),16)
+#' tree <- rtree(10)
+#' plot(tree)
+#' nodelabels()
+#' nodeImb(tree,16)
 #' 
 #' 
 #' @export
