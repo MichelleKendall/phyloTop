@@ -9,7 +9,9 @@ I am reviving the package, speeding up some of the computations, simplifying the
 
 # Updates
 
-15/04/2016: Added functions makeEpiRecord, getLabGenealogy and makePhyloTree (internal). Functions sortmyepi and makeTransTree are deprecated as they are no longer needed after these updates.
+06/04/2016: Added tests, and the functions nodeImbFrac and nodeDepthFrac. The function nodeFrac is now deprecated. All previous functions are now updated or deprecated and replaced.
+
+05/04/2016: Added functions makeEpiRecord, getLabGenealogy and makePhyloTree (internal). Functions sortmyepi and makeTransTree are deprecated as they are no longer needed after these updates.
 
 18/03/2016: Functions avgLadder, cherries, ILnumber, maxHeight, pitchforks, and sackin.phylo now contain normalisation options - thanks to Giacomo Plazzotta for providing me with their maximum values. Errors arising from submitting a tree with two tips to the tree statistic functions have now been removed - thanks to Scott Ward for spotting this problem and supplying code fixes.
 
