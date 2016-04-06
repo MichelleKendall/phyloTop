@@ -8,7 +8,7 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @param normalize option to normalize the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.
+#' @param normalise option to normalize the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.
 #' @return The Colless imbalance number of the tree.
 #' 
 #' @import ape
@@ -19,12 +19,12 @@
 #' 
 #' 
 #' @export
-colless.phylo <- function(tree,normalize=TRUE) {
+colless.phylo <- function(tree,normalise=TRUE) {
   ntips <- length(tree$tip.label)
   if (ntips==2) {return(0)}
   tImb <- treeImb(tree)
   diffs <- abs(apply(tImb,1,diff))
-  if (normalize) {
+  if (normalise) {
     n <- ((ntips-1)*(ntips-2))/2
     return(sum(diffs)/n)
   }
