@@ -4,12 +4,12 @@
 \alias{colless.phylo}
 \title{Colless number}
 \usage{
-colless.phylo(tree, normalize = TRUE)
+colless.phylo(tree, normalise = TRUE)
 }
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{normalize}{option to normalize the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.}
+\item{normalise}{option to normalise the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.}
 }
 \value{
 The Colless imbalance number of the tree.

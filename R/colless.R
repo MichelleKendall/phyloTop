@@ -8,7 +8,7 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @param normalise option to normalize the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.
+#' @param normalise option to normalise the result by dividing by the number of tip pairs. Defaults to \code{TRUE}.
 #' @return The Colless imbalance number of the tree.
 #' 
 #' @import ape
