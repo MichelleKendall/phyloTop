@@ -2,12 +2,12 @@
 % Please edit documentation in R/nodeImbFrac.R
 \name{nodeImbFrac}
 \alias{nodeImbFrac}
-\title{nodeImbFrac}
+\title{Fraction of nodes with given imbalance}
 \usage{
 nodeImbFrac(tree, threshold)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}.}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
 \item{threshold}{a threshold value for node imbalance.}
 }

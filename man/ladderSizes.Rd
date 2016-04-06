@@ -13,20 +13,27 @@ ladderSizes(tree)
 A list of ladder sizes
 }
 \description{
-NOTE: known bug!
 Finds the sizes of ladders in the tree. 
 A ladder is here defined to be a series of consecutive nodes in the tree,
-each of which has exactly one tip descendant.
+each of which has exactly one tip descendant (as counted by \code{\link{ILnumber}}).
 }
 \examples{
 ## Find ladder sizes in a random tree with 20 tips:
 tree <- rtree(20)
+plot(tree)
 ladderSizes(tree)
+# note that the ladders can be highlighted in a plot using ladderShow:
+\dontrun{
+ladderShow(tree)
+}
 
 }
 \author{
 Caroline Colijn \email{c.colijn@imperial.ac.uk}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{ILnumber}}, \code{\link{ladderShow}}
 }
 

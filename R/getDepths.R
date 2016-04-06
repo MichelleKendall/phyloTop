@@ -11,6 +11,8 @@
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
 #' @return A list of two vectors: \code{tipDepths} gives the depths of the tips, and \code{nodeDepths} gives the depths of the internal nodes.
 #' 
+#' @seealso \code{\link{nodeDepth}}, \code{\link{nodeDepthFrac}}
+#' 
 #' @import ape
 #'   
 #' @examples

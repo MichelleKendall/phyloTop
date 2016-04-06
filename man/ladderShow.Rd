@@ -24,7 +24,10 @@ Plot a tree, highlighting any ladders within it
 \examples{
 ## Highlight in blue the ladders in a random tree with 50 tips:
 \dontrun{
-ladderShow(rtree(50), ladderCol="blue", edge.width=2)
+tree <- rtree(50)
+ladderShow(tree, ladderCol="blue", edge.width=2)
+# compare to:
+ladderSizes(tree)
 }
 
 }
@@ -32,5 +35,8 @@ ladderShow(rtree(50), ladderCol="blue", edge.width=2)
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
 
 Michael Boyd \email{mboyd855@gmail.com}
+}
+\seealso{
+\code{\link{ladderSizes}}
 }
 

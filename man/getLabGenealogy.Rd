@@ -2,7 +2,7 @@
 % Please edit documentation in R/getLabGenealogy.R
 \name{getLabGenealogy}
 \alias{getLabGenealogy}
-\title{getLabGenealogy}
+\title{Create genealogy}
 \usage{
 getLabGenealogy(epirecord, epsilon = 0.001234)
 }
@@ -18,6 +18,7 @@ An object of class \code{phylo} representing the transmission tree from infector
 Create a labelled genealogy from an epidemiological record
 }
 \examples{
+## Generate an epidemiological record
 myepirecord <- makeEpiRecord(c(1,2,3,4))
 mygenealogy <- getLabGenealogy(myepirecord)
 plot(mygenealogy)
@@ -27,5 +28,8 @@ plot(mygenealogy)
 Caroline Colijn \email{c.colijn@imperial.ac.uk}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{makeEpiRecord}}
 }
 

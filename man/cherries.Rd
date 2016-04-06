@@ -18,14 +18,22 @@ An integer representing the number of cherries in the tree.
 Finds the number of cherries in a tree. A cherry is considered to be a pair of sister tips.
 }
 \examples{
+## Find the number of cherries in a random tree with 10 tips:
 tree <- rtree(10)
 plot(tree)
 cherries(tree)
+# and the normalised cherry number:
 cherries(tree, normalise=TRUE)
+
+## Note that the function configShow highlights the cherries in the tree:
+configShow(tree,2, edge.width=2)
 
 
 }
 \author{
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{configShow}}
 }
 

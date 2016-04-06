@@ -1,6 +1,6 @@
 #' Plot a tree highlighting configurations
 #' 
-#' Plots the tree with configurations of a given size highlighted.
+#' Plot a tree, highlighting configurations of a given size.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #' @author Michael Boyd \email{mboyd855@gmail.com}

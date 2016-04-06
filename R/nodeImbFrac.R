@@ -1,10 +1,10 @@
-#' nodeImbFrac
+#' Fraction of nodes with given imbalance
 #' 
 #' Calculate the fraction of internal nodes with an imbalance greater than or equal to a given threshold.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
-#' @param tree a tree of class \code{phylo} or \code{phylo4}.
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
 #' @param threshold a threshold value for node imbalance. 
 #' 
 #' @return For any internal node, the function \code{\link{nodeImb}} gives the number of tip descendants of each of the node's descending branches. \code{nodeImbFrac} returns the fraction of internal nodes where the difference between these numbers is greater than or equal to the threshold.

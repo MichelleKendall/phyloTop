@@ -21,7 +21,7 @@ configShow(tree, configSize, mainCol = "black", configCol = "red", ...)
 A plot of the tree, highlighting the configurations of the given size.
 }
 \description{
-Plots the tree with configurations of a given size highlighted.
+Plot a tree, highlighting configurations of a given size.
 }
 \examples{
 ## Highlight pitchforks in a random tree with 20 tips:

@@ -7,14 +7,21 @@
 #' @param tree a tree of class \code{phylo} or \code{phylo4}
 #' @param normalise option to normalise the result, default is \code{FALSE}
 #' @return An integer representing the number of cherries in the tree.
+#' 
+#' @seealso \code{\link{configShow}}
 #'
 #' @import ape
 #'        
 #' @examples
+#' ## Find the number of cherries in a random tree with 10 tips:
 #' tree <- rtree(10)
 #' plot(tree)
 #' cherries(tree)
+#' # and the normalised cherry number:
 #' cherries(tree, normalise=TRUE)
+#' 
+#' ## Note that the function configShow highlights the cherries in the tree:
+#' configShow(tree,2, edge.width=2)
 #' 
 #' 
 #' @export

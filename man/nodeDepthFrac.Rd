@@ -2,14 +2,14 @@
 % Please edit documentation in R/nodeDepthFrac.R
 \name{nodeDepthFrac}
 \alias{nodeDepthFrac}
-\title{nodeDepthFrac}
+\title{Fraction of nodes beyond a given depth}
 \usage{
 nodeDepthFrac(tree, threshold)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}.}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{threshold}{a threshold value for node depth}
+\item{threshold}{a threshold value for node depth.}
 }
 \value{
 The fraction of nodes with a depth greater than or equal to the threshold (see \code{\link{nodeDepth}} for more details on the meaning of node depth).

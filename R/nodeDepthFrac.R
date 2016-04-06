@@ -1,11 +1,11 @@
-#' nodeDepthFrac
+#' Fraction of nodes beyond a given depth
 #' 
 #' Calculate the fraction of nodes with a depth greater than or equal to a given threshold.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
-#' @param tree a tree of class \code{phylo} or \code{phylo4}.
-#' @param threshold a threshold value for node depth 
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
+#' @param threshold a threshold value for node depth.
 #' 
 #' @return The fraction of nodes with a depth greater than or equal to the threshold (see \code{\link{nodeDepth}} for more details on the meaning of node depth).
 #' 

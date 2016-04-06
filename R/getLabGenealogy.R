@@ -1,4 +1,4 @@
-#' getLabGenealogy
+#' Create genealogy
 #' 
 #' Create a labelled genealogy from an epidemiological record
 #' 
@@ -10,7 +10,10 @@
 #'
 #' @return An object of class \code{phylo} representing the transmission tree from infectors to infectees.
 #' 
+#' @seealso \code{\link{makeEpiRecord}}
+#' 
 #' @examples
+#' ## Generate an epidemiological record
 #' myepirecord <- makeEpiRecord(c(1,2,3,4))
 #' mygenealogy <- getLabGenealogy(myepirecord)
 #' plot(mygenealogy)

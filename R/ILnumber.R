@@ -12,8 +12,11 @@
 #' @import ape
 #' 
 #' @examples
+#' ## Find the IL number of a random tree with 10 tips:
 #' tree <- rtree(10)
+#' plot(tree)
 #' ILnumber(tree)
+#' ## and the normalised IL number:
 #' ILnumber(tree, normalise=TRUE)
 #' 
 #' @export

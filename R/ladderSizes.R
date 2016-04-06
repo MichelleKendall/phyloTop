@@ -1,15 +1,17 @@
 #' Ladder sizes
 #' 
-#' NOTE: known bug!
 #' Finds the sizes of ladders in the tree. 
 #' A ladder is here defined to be a series of consecutive nodes in the tree,
-#' each of which has exactly one tip descendant.
+#' each of which has exactly one tip descendant (as counted by \code{\link{ILnumber}}).
 #' 
 #' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}
+#' 
 #' @return A list of ladder sizes
+#' 
+#' @seealso \code{\link{ILnumber}}, \code{\link{ladderShow}}
 #'
 #' @import ape  
 #' @importFrom igraph graph_from_edgelist
@@ -19,7 +21,12 @@
 #' @examples
 #' ## Find ladder sizes in a random tree with 20 tips:
 #' tree <- rtree(20)
+#' plot(tree)
 #' ladderSizes(tree)
+#' # note that the ladders can be highlighted in a plot using ladderShow:
+#' \dontrun{
+#' ladderShow(tree)
+#' }
 #' 
 #' @export
 ladderSizes <- function(tree) {
@@ -36,9 +43,9 @@ ladderSizes <- function(tree) {
   DP[DP<=ntip]=0 
   DP[DP>ntip]=1
   
-  BrIsLadder=(rowSums(DP)==1) # which branches (1:nn) are ladders (1 or 0)
+  BrIsLadder=(rowSums(DP)==1) # which branches are ladders
   LadderBr=(1:nrow(DP))[BrIsLadder] # vector of only br that are part of a ladder
-  LadderNodes=ntip+LadderBr  # vector of NODES (orig node id) that are ladders
+  LadderNodes=ntip+LadderBr  # vector of NODES (original node id) that are ladders
   allIsLadder=c(rep(0,ntip),BrIsLadder) # 0 for all tips, then 1 or 0 for internal nodes
   
   EL=rbind( cbind(LadderNodes, Pointers[LadderBr,1]),cbind(LadderNodes,Pointers[LadderBr,2])) # Ancestor, Descendant where Ancestor is a Ladder Node (but fast as no finding in the edgelist).

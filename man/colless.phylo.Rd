@@ -16,12 +16,14 @@ The Colless imbalance number of the tree.
 }
 \description{
 Finds the Colless number for a tree.
-Note that the package apTreeshape has a function to compute the Colless imbalance with additional options to normalize it based on the model;
+Note that the package \code{\link{apTreeshape}} has a function \code{\link{colless}} to compute the Colless imbalance with additional options to normalise it based on the model;
 we include this simple function here for convenience within this package, and for use on objects of class \code{phylo} and \code{phylo4}.
 }
 \examples{
-## Colless imbalance of a random tree with 10 tips:
-colless.phylo(rtree(10))
+## Find the Colless imbalance of a random tree with 10 tips:
+tree <- rtree(10)
+plot(tree)
+colless.phylo(tree)
 
 
 }

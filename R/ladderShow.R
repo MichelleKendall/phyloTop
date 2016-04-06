@@ -9,13 +9,19 @@
 #' @param mainCol colour for branches which are not ladders (default is black)
 #' @param ladderCol colour for ladder branches (default is red)
 #' @param ... further arguments to be passed to plot.phylo
+#' 
 #' @return A plot of the tree, with ladders highlighted by colour.
+#' 
+#' @seealso \code{\link{ladderSizes}}
 #'   
 #' @import ape
 #' @examples
 #' ## Highlight in blue the ladders in a random tree with 50 tips:
 #' \dontrun{
-#' ladderShow(rtree(50), ladderCol="blue", edge.width=2)
+#' tree <- rtree(50)
+#' ladderShow(tree, ladderCol="blue", edge.width=2)
+#' # compare to:
+#' ladderSizes(tree)
 #' }
 #' 
 #' @export
