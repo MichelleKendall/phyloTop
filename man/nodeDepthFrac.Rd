@@ -20,7 +20,7 @@ Calculate the fraction of nodes with a depth greater than or equal to a given th
 \examples{
 ## Find the fraction of nodes with a depth of 5 or more, in a random tree with 20 tips:
 tree <- rtree(20)
-tree$edge.length <- rep(1,38) # so that the depths are easier to view in the plot
+tree$edge.length <- rep(1,38) # so that the depths are easier to view in a plot
 plot(tree)
 nodeDepthFrac(tree,threshold=5) 
 

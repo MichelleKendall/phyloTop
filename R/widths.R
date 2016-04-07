@@ -1,6 +1,6 @@
-#' Find the number of nodes at each depth
+#' Number of nodes at each depth
 #' 
-#' Gives the number of nodes at each depth in the tree
+#' Find the number of nodes at each depth in the tree
 #' 
 #' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
@@ -11,8 +11,9 @@
 #' @import ape
 #'   
 #' @examples
-#' ## Find the node widths in a random tree:
+#' ## Find the node widths in a random tree with 10 tips:
 #' tree <- rtree(10)
+#' tree$edge.length <- rep(1,18) # to make it easier to see the width and depths in the plot
 #' plot(tree)
 #' widths(tree)
 #' 

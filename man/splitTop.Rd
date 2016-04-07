@@ -9,16 +9,17 @@ splitTop(tree, dist)
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{dist}{integer distance of nodes of interest from the root}
+\item{dist}{integer distance of nodes of interest from the root.}
 }
 \value{
-The mean ladder size
+A vector of integers, each corresponding to the clade size of a node at the given distance from the root. The clade sizes are given in ascending order and each is labelled by its node name or number.
+This vector can be considered as a partition of the tips or the "split topology" of the tree at a given depth.
 }
 \description{
-For nodes at a given distance from the root, this function finds their numbers of tip descendants
+For each node at a given distance from the root, this function finds the size of its induced subclade, i.e. its number of tip descendants.
 }
 \examples{
-## Find the split topology of a random tree with 20 tips:
+## Find the split topology of a random tree with 20 tips, at a distance 2 from the root:
 tree <- rtree(20)
 plot(tree)
 splitTop(tree,2)

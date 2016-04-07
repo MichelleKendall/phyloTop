@@ -31,7 +31,7 @@ ladderShow <- function(tree, mainCol="black", ladderCol="red", ...) {
   nEdges <- length(tree$edge[,1])
   ladderBranches <- ladderSizes(tree)$ladderBr
   col <- rep(mainCol,nEdges)
-  # If the ladder number is at least one make the edge red
+  # If the ladder number is at least one, change the edge colour
   for (i in ladderBranches) {
     col[i] <- ladderCol
   }

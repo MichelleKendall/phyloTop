@@ -7,9 +7,9 @@
 cherries(tree, normalise = FALSE)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{normalise}{option to normalise the result, default is \code{FALSE}}
+\item{normalise}{option to normalise the result, default is \code{FALSE}.}
 }
 \value{
 An integer representing the number of cherries in the tree.
@@ -25,8 +25,8 @@ cherries(tree)
 # and the normalised cherry number:
 cherries(tree, normalise=TRUE)
 
-## Note that the function configShow highlights the cherries in the tree:
-configShow(tree,2, edge.width=2)
+## Note that the function configShow can be used to highlight the cherries in the tree:
+configShow(tree, 2, edge.width=2)
 
 
 }

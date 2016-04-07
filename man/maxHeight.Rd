@@ -7,9 +7,9 @@
 maxHeight(tree, normalise = FALSE)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{normalise}{option to normalise the result, default is \code{FALSE}}
+\item{normalise}{option to normalise the result, default is \code{FALSE}.}
 }
 \value{
 An integer giving the maximum height of tips in the tree.
@@ -18,8 +18,9 @@ An integer giving the maximum height of tips in the tree.
 Find the maximum height of tips in the tree.
 }
 \examples{
-## Maximum height of tips in a random tree:
+## Maximum height of tips in a random tree with 10 tips:
 tree <- rtree(10)
+plot(tree)
 maxHeight(tree) 
 maxHeight(tree, normalise=TRUE)
 

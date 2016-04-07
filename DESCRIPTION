@@ -13,7 +13,7 @@ Depends:
 Imports:
 	igraph,
 	NHPoisson,
-	phylobase    
+	phylobase
 Suggests:
   testthat
 RoxygenNote: 5.0.1

@@ -4,8 +4,9 @@
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'     
-#' @param tree a tree of class \code{phylo} or \code{phylo4}
-#' @param normalise option to normalise the result, default is \code{FALSE}
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
+#' @param normalise option to normalise the result, default is \code{FALSE}.
+#' 
 #' @return An integer representing the number of cherries in the tree.
 #' 
 #' @seealso \code{\link{configShow}}
@@ -20,8 +21,8 @@
 #' # and the normalised cherry number:
 #' cherries(tree, normalise=TRUE)
 #' 
-#' ## Note that the function configShow highlights the cherries in the tree:
-#' configShow(tree,2, edge.width=2)
+#' ## Note that the function configShow can be used to highlight the cherries in the tree:
+#' configShow(tree, 2, edge.width=2)
 #' 
 #' 
 #' @export

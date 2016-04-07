@@ -2,22 +2,22 @@
 % Please edit documentation in R/makePhyloTree.R
 \name{makePhyloTree}
 \alias{makePhyloTree}
-\title{makePhyloTree}
+\title{Make phylogenetic tree (internal)}
 \usage{
 makePhyloTree(Edges, Lengths, Root)
 }
 \arguments{
 \item{Edges}{a two-column matrix representing the edges of a tree. (It corresponds to the $edge entry of a \code{phylo} object, although the rows may not be in an expected order.) In each row the first entry is an internal node and the second entry is one of its immediate descendants.}
 
-\item{Lengths}{a numeric vector of the same length as a column of \code{Edges}. Each entry corresponds to the length of that edge.}
+\item{Lengths}{a numeric vector of the same length as the columns of \code{Edges}. Each entry corresponds to the length of that edge.}
 
 \item{Root}{the number of the internal node which is to be the root (usually the number of tips + 1)}
 }
 \value{
-An object of class \code{phylo}. When called by getLabGenealogy this represents the transmission tree from infectors to infectees.
+An object of class \code{phylo}. When called by \code{\link{getLabGenealogy}} this represents the genealogical transmission tree from infectors to infectees.
 }
 \description{
-This function is called by getLabGenealogy to turn an edge list and corresponding lengths and root node number into a tree of class \code{phylo}
+This function is called by \code{\link{getLabGenealogy}} to turn an edge list and corresponding lengths and root node number into a tree of class \code{phylo}
 }
 \author{
 Caroline Colijn \email{c.colijn@imperial.ac.uk}

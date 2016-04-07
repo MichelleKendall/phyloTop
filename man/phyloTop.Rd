@@ -2,7 +2,7 @@
 % Please edit documentation in R/phyloTop.R
 \name{phyloTop}
 \alias{phyloTop}
-\title{phyloTop: calculating topological properties of phylogenies}
+\title{phyloTop: topological properties of phylogenies}
 \usage{
 phyloTop(treeList, funcs = "all", normalise = FALSE)
 }

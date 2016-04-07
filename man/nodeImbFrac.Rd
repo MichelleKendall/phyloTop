@@ -12,13 +12,14 @@ nodeImbFrac(tree, threshold)
 \item{threshold}{a threshold value for node imbalance.}
 }
 \value{
-For any internal node, the function \code{\link{nodeImb}} gives the number of tip descendants of each of the node's descending branches. \code{nodeImbFrac} returns the fraction of internal nodes where the difference between these numbers is greater than or equal to the threshold.
+For any internal node, the function \code{\link{nodeImb}} gives the number of tip descendants of each of the node's descending branches. The function \code{nodeImbFrac} returns the fraction of internal nodes where the difference between these numbers is greater than or equal to the threshold.
 }
 \description{
 Calculate the fraction of internal nodes with an imbalance greater than or equal to a given threshold.
 }
 \examples{
-## Find the fraction of internal nodes with an imbalance of 5 or more, in a random tree with 20 tips:
+## Find the fraction of internal nodes with an imbalance of 5 or more, 
+## in a random tree with 20 tips:
 tree <- rtree(20)
 plot(tree)
 nodeImbFrac(tree,threshold=5) 

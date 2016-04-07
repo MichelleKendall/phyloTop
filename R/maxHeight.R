@@ -5,17 +5,17 @@
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #'   
-#' @param tree a tree of class \code{phylo4}
-#' @param normalise option to normalise the result, default is \code{FALSE}
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
+#' @param normalise option to normalise the result, default is \code{FALSE}.
+#' 
 #' @return An integer giving the maximum height of tips in the tree.
 #' 
 #' @import ape
-#' @importFrom phylobase edgeLength
-#' @importFrom phylobase nodeDepth
 #' 
 #' @examples
-#' ## Maximum height of tips in a random tree:
+#' ## Maximum height of tips in a random tree with 10 tips:
 #' tree <- rtree(10)
+#' plot(tree)
 #' maxHeight(tree) 
 #' maxHeight(tree, normalise=TRUE)
 #' 

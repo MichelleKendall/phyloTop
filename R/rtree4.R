@@ -7,13 +7,15 @@
 #'
 #' @param n an integer giving the number of tips in the tree
 #' @param ... further arguments to be passed to rtree
-#' @return An object of class \code{"phylo4"}
+#' 
+#' @return An object of class \code{"phylo4"}.
 #'
 #' @import ape
+#' @importFrom phylobase phylo4 
 #'
 #' @examples
-#' ## Create a random phylo4 tree with 10 tips
-#' rtree4(10)
+#' ## Create a random phylo4 tree with 10 tips:
+#' tree4 <- rtree4(10)
 #'
 #'
 #' @export

@@ -10,16 +10,24 @@ treeImb(tree)
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 }
 \value{
-A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches. (Note that this is the transform of the output in version 1.0.0.)
+A matrix where rows correspond to nodes of the tree. The two column entries correspond to the number of tip descendants of each of its two children. (Note that this is the transform of the output in phyloTop version 1.0.0.)
+Where the row number corresponds to a tip, the entries are (0,0).
 }
 \description{
-Finds the imbalance of descendants: for each node it gives the number of descendants from of each descendant branch.
+Find the imbalance of each node, that is the number of tip descendants of each of its two children.
 }
 \examples{
-treeImb(rtree(10))
+## Find the imbalance numbers in a random tree with 10 tips:
+tree <- rtree(10)
+plot(tree)
+nodelabels()
+treeImb(tree)
 
 }
 \author{
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{nodeImb}}
 }
 

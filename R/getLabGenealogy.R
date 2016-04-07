@@ -13,8 +13,9 @@
 #' @seealso \code{\link{makeEpiRecord}}
 #' 
 #' @examples
-#' ## Generate an epidemiological record
+#' ## Generate an epidemiological record:
 #' myepirecord <- makeEpiRecord(c(1,2,3,4))
+#' ## make the corresponding genealogy from this record:
 #' mygenealogy <- getLabGenealogy(myepirecord)
 #' plot(mygenealogy)
 #' 

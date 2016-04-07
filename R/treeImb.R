@@ -1,16 +1,24 @@
 #' Tree imbalance
 #' 
-#' Finds the imbalance of descendants: for each node it gives the number of descendants from of each descendant branch.
+#' Find the imbalance of each node, that is the number of tip descendants of each of its two children.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @return A matrix where rows correspond to nodes of the tree and columns correspond to each of the two descendant branches. (Note that this is the transform of the output in version 1.0.0.)
+#' 
+#' @return A matrix where rows correspond to nodes of the tree. The two column entries correspond to the number of tip descendants of each of its two children. (Note that this is the transform of the output in phyloTop version 1.0.0.)
+#' Where the row number corresponds to a tip, the entries are (0,0).
+#' 
+#' @seealso \code{\link{nodeImb}}
 #'
 #' @import ape
 #' 
 #' @examples
-#' treeImb(rtree(10))
+#' ## Find the imbalance numbers in a random tree with 10 tips:
+#' tree <- rtree(10)
+#' plot(tree)
+#' nodelabels()
+#' treeImb(tree)
 #' 
 #' @export
 treeImb <- function(tree) {

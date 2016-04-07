@@ -1,4 +1,4 @@
-#' Configuration sizes in the tree
+#' Configuration sizes in a tree
 #' 
 #' Finds the sizes of configurations in the tree. 
 #' 
@@ -7,6 +7,7 @@
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
 #' @param maxClade An integer between 1 and the number of tips (the default), specifying the maximum clade size of interest.
+#' 
 #' @return A list with 2 entries: 
 #' \itemize{
 #' \item cladeSizes is a vector giving the size of the clade descending at each node. Tips all have the value 1. 
@@ -19,7 +20,10 @@
 #'  
 #' @examples
 #' ## Configuration sizes on a random tree with 10 tips:
-#' nConfig(rtree(10))
+#' tree <- rtree(10)
+#' plot(tree)
+#' nodelabels()
+#' nConfig(tree)
 #' 
 #' 
 #' @export
@@ -32,7 +36,7 @@ nConfig <- function(tree,maxClade=NULL) {
   else if(maxClade > num.tips) {maxClade <- num.tips} # maxClade greater than number of tips makes no sense and would append unnecessary zeroes to output
   labels <- rep(NA, nrow(tree$edge)+1)
   names(labels)[1:num.tips]=tree$tip.label;
-  names(labels)[(num.tips+1): length(labels)]=paste("node",1:(length(labels)-num.tips),sep="")
+  names(labels)[(num.tips+1): length(labels)]=paste0("node",(num.tips+1): length(labels))
   labels[1:num.tips]=1     # tips are 1 here. 
   NodeIDS= (num.tips + 1) : (2*num.tips -1)
   # fill in the configuration sizes of internal nodes

@@ -1,13 +1,14 @@
 #' Node depth
 #' 
-#' Determines the depth of a particular node in a tree, defined as the number of edges between it and the root.
+#' Determine the depth of a particular node in a tree, defined as the number of edges between it and the root.
 #' (So the root has depth zero, its children have depth one, etc.)
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
-#' @param node a number corresponding to a node in the tree
-#' @return An integer, corresponding to the depth of that node
+#' @param node a number corresponding to a node in the tree.
+#' 
+#' @return An integer corresponding to the depth of the given node.
 #' 
 #' @import ape
 #'   

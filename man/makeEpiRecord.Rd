@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeEpiRecord.R
 \name{makeEpiRecord}
 \alias{makeEpiRecord}
-\title{makeEpiRecord}
+\title{Simulate epidemiological record}
 \usage{
 makeEpiRecord(lambda, duration = 1, NumCases = 50)
 }
@@ -14,7 +14,8 @@ makeEpiRecord(lambda, duration = 1, NumCases = 50)
 \item{NumCases}{the approximate number of infected cases (default is 50)}
 }
 \value{
-An object of class \code{phylo} representing the transmission tree from infectors to infectees.
+A matrix with columns "Infectee", "Infector", "InfnTime" (infection time), "RecTime" (recovery time), "DoneFlag".
+Suitable for using with \code{\link{getLabGenealogy}}
 }
 \description{
 Create an epidemiological record of infectors and infectees with corresponding infection and recovery times
@@ -27,5 +28,8 @@ myepirecord <- makeEpiRecord(c(1,2,3,4), duration=2, NumCases=100)
 Caroline Colijn \email{c.colijn@imperial.ac.uk}
 
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{getLabGenealogy}}
 }
 

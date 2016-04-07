@@ -2,7 +2,7 @@
 % Please edit documentation in R/widths.R
 \name{widths}
 \alias{widths}
-\title{Find the number of nodes at each depth}
+\title{Number of nodes at each depth}
 \usage{
 widths(tree)
 }
@@ -13,11 +13,12 @@ widths(tree)
 A vector of widths, where entry i is the number of nodes at depth i. There is a single node at depth 0 (the root) which is not included in the vector, for simplicity.
 }
 \description{
-Gives the number of nodes at each depth in the tree
+Find the number of nodes at each depth in the tree
 }
 \examples{
-## Find the node widths in a random tree:
+## Find the node widths in a random tree with 10 tips:
 tree <- rtree(10)
+tree$edge.length <- rep(1,18) # to make it easier to see the width and depths in the plot
 plot(tree)
 widths(tree)
 

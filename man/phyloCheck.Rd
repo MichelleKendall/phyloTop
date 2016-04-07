@@ -2,7 +2,7 @@
 % Please edit documentation in R/phyloCheck.R
 \name{phyloCheck}
 \alias{phyloCheck}
-\title{Check the format of the tree}
+\title{Check tree format (internal)}
 \usage{
 phyloCheck(tree)
 }
@@ -14,7 +14,7 @@ If necessary the tree will be coerced into a binary rooted tree using multi2di, 
 A binary, rooted tree of class \code{phylo}, if possible.
 }
 \description{
-Coerces the tree into a rooted, binary tree of class phylo. Note that this function used to require trees to be of class \code{phylo4} but this is no longer needed.
+Coerces the tree into a rooted, binary tree of class \code{phylo}. Note that this function used to require trees to be of class \code{phylo4} but the package now uses class \code{phylo} throughout.
 }
 \author{
 Caroline Colijn \email{c.colijn@imperial.ac.uk}

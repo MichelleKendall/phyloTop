@@ -1,12 +1,13 @@
-#' Check the format of the tree
+#' Check tree format (internal)
 #' 
-#' Coerces the tree into a rooted, binary tree of class phylo. Note that this function used to require trees to be of class \code{phylo4} but this is no longer needed.
+#' Coerces the tree into a rooted, binary tree of class \code{phylo}. Note that this function used to require trees to be of class \code{phylo4} but the package now uses class \code{phylo} throughout.
 #' 
 #' @author Caroline Colijn \email{c.colijn@imperial.ac.uk}
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #'   
 #' @param tree a tree of class \code{phylo} or \code{phylo4}. For most functions in this package the tree should be binary and rooted, hence this function is called to check.
 #' If necessary the tree will be coerced into a binary rooted tree using multi2di, if possible.
+#' 
 #' @return A binary, rooted tree of class \code{phylo}, if possible.
 #' 
 #' @import ape

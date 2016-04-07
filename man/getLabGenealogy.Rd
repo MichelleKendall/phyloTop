@@ -18,8 +18,9 @@ An object of class \code{phylo} representing the transmission tree from infector
 Create a labelled genealogy from an epidemiological record
 }
 \examples{
-## Generate an epidemiological record
+## Generate an epidemiological record:
 myepirecord <- makeEpiRecord(c(1,2,3,4))
+## make the corresponding genealogy from this record:
 mygenealogy <- getLabGenealogy(myepirecord)
 plot(mygenealogy)
 

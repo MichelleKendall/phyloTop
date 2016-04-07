@@ -1,4 +1,4 @@
-#' phyloTop: calculating topological properties of phylogenies
+#' phyloTop: topological properties of phylogenies
 #' 
 #' Calculate a range of topological properties for one or more phylogenetic trees.
 #' 

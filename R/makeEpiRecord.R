@@ -1,4 +1,4 @@
-#' makeEpiRecord
+#' Simulate epidemiological record
 #' 
 #' Create an epidemiological record of infectors and infectees with corresponding infection and recovery times
 #' 
@@ -9,7 +9,10 @@
 #' @param duration the fixed duration of infection (default is 1)
 #' @param NumCases the approximate number of infected cases (default is 50)
 #'
-#' @return An object of class \code{phylo} representing the transmission tree from infectors to infectees.
+#' @return A matrix with columns "Infectee", "Infector", "InfnTime" (infection time), "RecTime" (recovery time), "DoneFlag".
+#' Suitable for using with \code{\link{getLabGenealogy}}
+#' 
+#' @seealso \code{\link{getLabGenealogy}}
 #' 
 #' @importFrom NHPoisson simNHP.fun
 #' 

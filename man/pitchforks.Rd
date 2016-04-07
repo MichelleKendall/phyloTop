@@ -7,9 +7,9 @@
 pitchforks(tree, normalise = FALSE)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{normalise}{option to normalise the result, default is \code{FALSE}}
+\item{normalise}{option to normalise the result, default is \code{FALSE}.}
 }
 \value{
 An integer representing the number of pitchforks in the tree.
@@ -18,14 +18,22 @@ An integer representing the number of pitchforks in the tree.
 Finds the number of pitchforks in a tree. A pitchfork is considered to be a clade with three tips.
 }
 \examples{
-tree <- rtree(10)
+## Find the number of pitchforks in a random tree with 20 tips:
+tree <- rtree(20)
 plot(tree)
 pitchforks(tree)
+# and the normalised pitchfork number:
 pitchforks(tree, normalise=TRUE)
+
+## Note that the function configShow can be used to highlight the pitchforks in the tree:
+configShow(tree, 3, edge.width=2)
 
 
 }
 \author{
 Michelle Kendall \email{michelle.louise.kendall@gmail.com}
+}
+\seealso{
+\code{\link{configShow}}
 }
 

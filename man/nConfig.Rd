@@ -2,7 +2,7 @@
 % Please edit documentation in R/nConfig.R
 \name{nConfig}
 \alias{nConfig}
-\title{Configuration sizes in the tree}
+\title{Configuration sizes in a tree}
 \usage{
 nConfig(tree, maxClade = NULL)
 }
@@ -25,7 +25,10 @@ Finds the sizes of configurations in the tree.
 }
 \examples{
 ## Configuration sizes on a random tree with 10 tips:
-nConfig(rtree(10))
+tree <- rtree(10)
+plot(tree)
+nodelabels()
+nConfig(tree)
 
 
 }

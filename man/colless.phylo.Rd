@@ -16,7 +16,7 @@ The Colless imbalance number of the tree.
 }
 \description{
 Finds the Colless number for a tree.
-Note that the package \code{\link{apTreeshape}} has a function \code{\link{colless}} to compute the Colless imbalance with additional options to normalise it based on the model;
+Note that the package \code{apTreeshape} has a function \code{colless} to compute the Colless imbalance with additional options to normalise it based on the model;
 we include this simple function here for convenience within this package, and for use on objects of class \code{phylo} and \code{phylo4}.
 }
 \examples{

@@ -12,14 +12,14 @@ rtree4(n, ...)
 \item{...}{further arguments to be passed to rtree}
 }
 \value{
-An object of class \code{"phylo4"}
+An object of class \code{"phylo4"}.
 }
 \description{
 Creates a random phylo4 tree, in parallel to \code{ape}'s \code{rtree} function.
 }
 \examples{
-## Create a random phylo4 tree with 10 tips
-rtree4(10)
+## Create a random phylo4 tree with 10 tips:
+tree4 <- rtree4(10)
 
 
 }
