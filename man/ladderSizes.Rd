@@ -7,15 +7,21 @@
 ladderSizes(tree)
 }
 \arguments{
-\item{tree}{a tree of class \code{phylo} or \code{phylo4}}
+\item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 }
 \value{
-A list of ladder sizes
+A list of:
+\itemize{
+\item ladderSizes the sizes of ladders in the tree
+\item ladderNodes the ladder nodes in the tree
+\item ladderEdges the edges between ladder nodes of the tree
+}
 }
 \description{
-Finds the sizes of ladders in the tree. 
+Finds the sizes and positions of ladders in the tree. 
 A ladder is here defined to be a series of consecutive nodes in the tree,
 each of which has exactly one tip descendant (as counted by \code{\link{ILnumber}}).
+The size of the ladder is given by the number of nodes in the chain.
 }
 \examples{
 ## Find ladder sizes in a random tree with 20 tips:

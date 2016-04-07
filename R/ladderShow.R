@@ -1,16 +1,17 @@
 #' Show ladders
 #' 
-#' Plot a tree, highlighting any ladders within it
+#' Plot a tree, highlighting any ladders within it.
 #' 
 #' @author Michelle Kendall \email{michelle.louise.kendall@@gmail.com}
 #' @author Michael Boyd \email{mboyd855@gmail.com}
 #'   
-#' @param tree a tree of class \code{phylo} or \code{phylo4}
-#' @param mainCol colour for branches which are not ladders (default is black)
-#' @param ladderCol colour for ladder branches (default is red)
+#' @param tree a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.
+#' @param mainCol colour for edges which are not ladders (default is black)
+#' @param ladderEdgeCol colour for ladder edges (default is red)
+#' @param ladderNodeCol colour for ladder nodes (default is red)
 #' @param ... further arguments to be passed to plot.phylo
 #' 
-#' @return A plot of the tree, with ladders highlighted by colour.
+#' @return A plot of the tree, with ladder edges and nodes highlighted by colour.
 #' 
 #' @seealso \code{\link{ladderSizes}}
 #'   
@@ -19,23 +20,28 @@
 #' ## Highlight in blue the ladders in a random tree with 50 tips:
 #' \dontrun{
 #' tree <- rtree(50)
-#' ladderShow(tree, ladderCol="blue", edge.width=2)
+#' ladderShow(tree, edge.width=2)
 #' # compare to:
 #' ladderSizes(tree)
 #' }
 #' 
 #' @export
-ladderShow <- function(tree, mainCol="black", ladderCol="red", ...) {
+ladderShow <- function(tree, mainCol="black", ladderEdgeCol="red", ladderNodeCol="red", ...) {
   tree <- phyloCheck(tree)
   edgeList <- tree$edge
-  nEdges <- length(tree$edge[,1])
-  ladderBranches <- ladderSizes(tree)$ladderBr
+  nEdges <- nrow(tree$edge)
   col <- rep(mainCol,nEdges)
+  ladderSizes <- ladderSizes(tree)
+  
+  ladderEdges <- ladderSizes$ladderEdges
+  ladderNodes <- (1:(2*length(tree$tip.label)-1))[ladderSizes$ladderNodes] # coerces into correct "integer" format
+
   # If the ladder number is at least one, change the edge colour
-  for (i in ladderBranches) {
-    col[i] <- ladderCol
+  for (i in ladderEdges) {
+    col[i] <- ladderEdgeCol
   }
   plot(tree,edge.color=col, ...)
+  if(length(ladderNodes)!=0) nodelabels(node=ladderNodes, bg=ladderNodeCol)
 }
 
 
