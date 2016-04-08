@@ -9,6 +9,8 @@ I am reviving the package, speeding up some of the computations, simplifying the
 
 # Updates
 
+07/04/2016: Fixed bug in ladderSizes (which also affected avgLadder) and improved ladderShow plotting.
+
 06/04/2016: Added tests, and the functions nodeImbFrac and nodeDepthFrac. The function nodeFrac is now deprecated. All previous functions are now updated or deprecated and replaced.
 
 05/04/2016: Added functions makeEpiRecord, getLabGenealogy and makePhyloTree (internal). Functions sortmyepi and makeTransTree are deprecated as they are no longer needed after these updates.
