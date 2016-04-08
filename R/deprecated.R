@@ -72,7 +72,7 @@ laddItr <- function(...) {
 }
 
 makeTransTree <- function(...) {
-  .Deprecated("phyloTop", package="phyloTop", 
+  .Deprecated("makeEpiRecord", package="phyloTop", 
               "Function deprecated: use instead the new function makeEpiRecord")
 }
 
@@ -109,8 +109,8 @@ rootLaddDist <- function(...) {
 }
 
 sortmyepi <- function(...) {
-  .Deprecated("phyloTop", package="phyloTop",
-              "Function deprecated: now a single line within makelabgenealogy")
+  .Deprecated("getLabGenealogy", package="phyloTop",
+              "Function deprecated: now a line within getLabGenealogy")
 }
 
 subtreeShow <- function(...) {

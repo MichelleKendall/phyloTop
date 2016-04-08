@@ -20,7 +20,7 @@ A list of:
 \description{
 Finds the sizes and positions of ladders in the tree. 
 A ladder is here defined to be a series of consecutive nodes in the tree,
-each of which has exactly one tip descendant (as counted by \code{\link{ILnumber}}).
+each of which has exactly one tip child (as counted by \code{\link{ILnumber}}).
 The size of the ladder is given by the number of nodes in the chain.
 }
 \examples{
