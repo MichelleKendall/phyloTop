@@ -9,6 +9,8 @@ I am reviving the package, speeding up some of the computations, simplifying the
 
 # Updates
 
+08/04/2016: Reinstated the function subtreeShow.
+
 07/04/2016: Fixed bug in ladderSizes (which also affected avgLadder) and improved ladderShow plotting.
 
 06/04/2016: Added tests, and the functions nodeImbFrac and nodeDepthFrac. The function nodeFrac is now deprecated. All previous functions are now updated or deprecated and replaced.
