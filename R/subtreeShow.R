@@ -50,7 +50,7 @@ subtreeShow <- function(tree, nodeList, showNodeLabels="nodeList", mainCol="blac
   }
   
   edgeCol[edgesToColour] <- subtreeCol
-  plot.phylo(tree, edge.col=edgeCol, ...)
+  plot.phylo(tree, edge.color=edgeCol, ...)
   if (showNodeLabels=="nodeList") {nodelabels(node=originalNodeList, bg=nodeLabelCol)}
   else if (showNodeLabels=="all") {nodelabels(bg=nodeLabelCol)}
 }

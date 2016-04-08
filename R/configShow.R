@@ -44,5 +44,5 @@ configShow <- function(tree, configSize, mainCol="black", configCol="red",  ...)
         }
   }
 
-  plot.phylo(tree, edge.col=col, ...)
+  plot.phylo(tree, edge.color=col, ...)
 }
