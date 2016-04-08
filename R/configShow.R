@@ -16,9 +16,7 @@
 #' 
 #' @examples
 #' ## Highlight pitchforks in a random tree with 20 tips:
-#' \dontrun{
 #' configShow(rtree(20),3, edge.width=2)
-#' }
 #' 
 #' @export
 configShow <- function(tree, configSize, mainCol="black", configCol="red",  ...) {

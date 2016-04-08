@@ -29,9 +29,8 @@ tree <- rtree(20)
 plot(tree)
 ladderSizes(tree)
 # note that the ladders can be highlighted in a plot using ladderShow:
-\dontrun{
 ladderShow(tree)
-}
+
 
 }
 \author{

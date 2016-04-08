@@ -16,14 +16,14 @@
 #' @seealso \code{\link{ladderSizes}}
 #'   
 #' @import ape
+#' 
 #' @examples
 #' ## Highlight in blue the ladders in a random tree with 50 tips:
-#' \dontrun{
 #' tree <- rtree(50)
 #' ladderShow(tree, edge.width=2)
 #' # compare to:
 #' ladderSizes(tree)
-#' }
+#' 
 #' 
 #' @export
 ladderShow <- function(tree, mainCol="black", ladderEdgeCol="red", ladderNodeCol="red", ...) {
