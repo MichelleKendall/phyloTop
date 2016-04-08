@@ -100,8 +100,8 @@ nTipChildren <- function(...) {
 }
 
 nTipDescendants <- function(...) {
-  .Deprecated("phyloTop", package="phyloTop",
-              "Function deprecated: number of descendants is handled within the relevant functions.")
+  .Deprecated("nConfig", package="phyloTop",
+              "Function deprecated: number of tip descendants is given within the output of nConfig.")
 }
 
 rootLaddDist <- function(...) {
