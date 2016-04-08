@@ -40,7 +40,7 @@ ladderShow <- function(tree, mainCol="black", ladderEdgeCol="red", ladderNodeCol
   for (i in ladderEdges) {
     col[i] <- ladderEdgeCol
   }
-  plot(tree,edge.color=col, ...)
+  plot.phylo(tree,edge.color=col, ...)
   if(length(ladderNodes)!=0) nodelabels(node=ladderNodes, bg=ladderNodeCol)
 }
 

@@ -12,6 +12,7 @@ Depends:
 	ape
 Imports:
 	igraph,
+	methods,
 	NHPoisson,
 	phylobase
 Suggests:

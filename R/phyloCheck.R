@@ -11,6 +11,7 @@
 #' @return A binary, rooted tree of class \code{phylo}, if possible.
 #' 
 #' @import ape
+#' @importFrom methods as
 #' 
 #' @keywords internal
 #' 

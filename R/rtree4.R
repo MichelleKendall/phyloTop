@@ -12,6 +12,7 @@
 #'
 #' @import ape
 #' @importFrom phylobase phylo4 
+#' @importFrom methods as
 #'
 #' @examples
 #' ## Create a random phylo4 tree with 10 tips:

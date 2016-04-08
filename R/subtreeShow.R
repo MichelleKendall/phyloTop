@@ -19,13 +19,12 @@
 #'   
 #' @examples
 #' ## Highlight the clade(s) descending from nodes 23 and 35 in a random tree on 20 tips:
-#' \dontrun{
 #' tree <- rtree(20)
 #' subtreeShow(tree, nodeList=c(23,35))
 #' # change aesthetics:
 #' subtreeShow(tree,nodeList=c(23,35), mainCol="navy", subtreeCol="cyan", 
 #'    nodeLabelCol="cyan", edge.width=2)
-#' }
+#'    
 #' 
 #' @export
 subtreeShow <- function(tree, nodeList, showNodeLabels="nodeList", mainCol="black", subtreeCol="red", nodeLabelCol="lightblue", ...) {
@@ -51,7 +50,7 @@ subtreeShow <- function(tree, nodeList, showNodeLabels="nodeList", mainCol="blac
   }
   
   edgeCol[edgesToColour] <- subtreeCol
-  plot(tree, edge.col=edgeCol, ...)
+  plot.phylo(tree, edge.col=edgeCol, ...)
   if (showNodeLabels=="nodeList") {nodelabels(node=originalNodeList, bg=nodeLabelCol)}
   else if (showNodeLabels=="all") {nodelabels(bg=nodeLabelCol)}
 }
