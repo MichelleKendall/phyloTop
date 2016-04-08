@@ -113,10 +113,6 @@ sortmyepi <- function(...) {
               "Function deprecated: now a line within getLabGenealogy")
 }
 
-subtreeShow <- function(...) {
-  .Deprecated("configShow", package="phyloTop")
-}
-
 topSumm <- function(...) {
   .Deprecated("phyloTop", package="phyloTop")
 }
