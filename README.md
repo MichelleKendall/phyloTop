@@ -1,6 +1,6 @@
 [![Travis-CI Build Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https://travis-ci.org/MichelleKendall/phyloTop)
 
-*treescape*: Calculating Topological Properties of Phylogenies
+*phyloTop*: Calculating Topological Properties of Phylogenies
 ========
 
 *phyloTop* provides tools for calculating and viewing topological properties of phylogenetic trees.
