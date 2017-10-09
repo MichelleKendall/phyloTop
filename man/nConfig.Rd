@@ -9,7 +9,7 @@ nConfig(tree, maxClade = NULL)
 \arguments{
 \item{tree}{a tree of class \code{phylo} or \code{phylo4}. The tree should be binary and rooted; if not it will be coerced into a binary rooted tree using multi2di, if possible.}
 
-\item{maxClade}{An integer between 1 and the number of tips (the default), specifying the maximum clade size of interest.}
+\item{maxClade}{an integer between 1 and the number of tips (the default), specifying the maximum clade size of interest.}
 }
 \value{
 A list with 2 entries: 
