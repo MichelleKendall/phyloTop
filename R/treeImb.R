@@ -32,7 +32,10 @@ treeImb <- function(tree) {
   imbalance <- matrix(NA, ntips-1, 2) # initialise matrix of descendant numbers
   
   for (tmp in (nNodes - 1):1) {
-    tmpRow <- edges[tmp,] - ntips # row "tmp" of edge matrix gives the labels of the descendent nodes; subtract the number of tips from these labels
+    tmpRow <- edges[tmp,] - ntips # row "tmp" of edge matrix gives the labels of a (parent, child) pair of nodes; subtract the number of tips from these labels
+    # if imbalance[tmpRow[1],1] is NA, fill it in; if it already has a value, fill in imbalance[tmpRow[1],2] as follows:
+    # if tmpRow[2] <= 0, fill in with the value 1
+    # otherwise, fill with 1 + sum(imbalance[tmpRow[2],] (the total of the row tmpRow[2])
     imbalance[tmpRow[1], 2 - is.na(imbalance[tmpRow[1],1])] <- 1 + ifelse(tmpRow[2] <= 0, 0, sum(imbalance[tmpRow[2],]))
   }
   
