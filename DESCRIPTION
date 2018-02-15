@@ -1,10 +1,10 @@
 Package: phyloTop
 Title: Calculating Topological Properties of Phylogenies
-Version: 2.0.1
-Authors@R: c(MK=person("Michelle", "Kendall", email="m.kendall@imperial.ac.uk", role = c("aut", "cre")),
+Version: 2.1.0
+Authors@R: c(MK=person("Michelle", "Kendall", email="michelle.kendall@bdi.ox.ac.uk", role = c("aut", "cre")),
       MB=person("Michael", "Boyd", email="mboyd855@gmail.com", role = c("aut")),
 	    CC=person("Caroline", "Colijn", role = c("aut")))
-Maintainer: Michelle Kendall <m.kendall@imperial.ac.uk>
+Maintainer: Michelle Kendall <michelle.kendall@bdi.ox.ac.uk>
 Description: Tools for calculating and viewing topological properties of phylogenetic trees.
 License: GPL-2
 Depends:

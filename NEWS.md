@@ -1,4 +1,4 @@
-phyloTop v2.1.1
+phyloTop v2.1.0
 ===============
 
 We are very grateful to Leonid Chindelevitch for his comments which have led to this significantly improved version of phyloTop: most of the functions are now calculated in linear time and We have fixed errors in the calculation of the sackin and stairs measures. 
