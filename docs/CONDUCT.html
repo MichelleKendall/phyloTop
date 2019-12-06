@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Changelog • phyloTop</title>
+<title>Contributor Code of Conduct • phyloTop</title>
 
 
 <!-- jquery -->
@@ -29,13 +29,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Changelog" />
+<meta property="og:title" content="Contributor Code of Conduct" />
 
 
 
@@ -54,7 +54,7 @@
   </head>
 
   <body>
-    <div class="container template-news">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -66,7 +66,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">phyloTop</a>
+        <a class="navbar-link" href="index.html">phyloTop</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
       </span>
     </div>
@@ -74,16 +74,16 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -104,48 +104,25 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      <small>Source: <a href='https://github.com/MichelleKendall/phyloTop/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
+      <h1>Contributor Code of Conduct</h1>
     </div>
 
-    <div id="phylotop-v2-1-0" class="section level1">
-<h1 class="page-header">
-<a href="#phylotop-v2-1-0" class="anchor"></a>phyloTop v2.1.0<small> 2017-10-10 </small>
-</h1>
-<p>We are very grateful to Leonid Chindelevitch for his comments which have led to this significantly improved version of phyloTop: most of the functions are now calculated in linear time and we have fixed errors in the calculation of the Sackin and stairs measures.</p>
-</div>
-    <div id="phylotop-v2-0-0" class="section level1">
-<h1 class="page-header">
-<a href="#phylotop-v2-0-0" class="anchor"></a>phyloTop v2.0.0<small> 2016-04-14 </small>
-</h1>
-<p>phyloTop v1.1.1 was archived on CRAN on 2015-10-29 as it was no longer maintained by its creator, Michael Boyd.</p>
-<p>The package has been revived by Michelle Kendall and Caroline Colijn. All of the functions in version 2.0.0 have been updated, with faster implementations, simplified format requirements and dependencies, and further help files and examples added. We have included explanations in the help files wherever version 2.0.0 is not backwards compatible, and documented the deprecated functions.</p>
-<p>Major updates include:</p>
-<ul>
-<li><p>all functions accept trees of class phylo or phylo4, automatically changing them to class phylo and coercing them into binary, rooted trees wherever possible.</p></li>
-<li><p>the functions nConfig, ladderSizes and getDepths (on which many of the others depend) have been freshly implemented and are significantly faster.</p></li>
-<li><p>the new function phyloTop takes a list of trees and applies a variety of topological functions, returning a matrix of topological statistics (faster than calling each function individually). Other new functions are: makeEpiRecord, nodeImbFrac, nodeDepthFrac, phyloCheck.</p></li>
-<li><p>many minor functions were only called by one main function - these have been deprecated and subsumed into the code for the main function. Some minor functions are unnecessary now that compuations are performed on trees in phylo rather than phylo4 format - these have been deprecated. Others have been updated and marked as internal.</p></li>
-<li><p>the functions avgLadder, cherries, ILnumber, maxHeight, pitchforks, and sackin.phylo now contain normalisation options. We thank Giacomo Plazzotta for enabling this by providing their maximum values.</p></li>
-<li><p>errors arising from submitting a tree with two tips have now been removed. We thank Scott Ward for spotting this problem and supplying code fixes.</p></li>
-<li><p>further plotting options have been added to the tree visualisation functions configShow, ladderShow and subtreeShow.</p></li>
-</ul>
-</div>
-  </div>
+<div id="contributor-code-of-conduct" class="section level1">
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#phylotop-v2-1-0">2.1.0</a></li>
-        <li><a href="#phylotop-v2-0-0">2.0.0</a></li>
-      </ul>
-    </div>
+<p>As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.</p>
+<p>We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, or religion.</p>
+<p>Examples of unacceptable behavior by participants include the use of sexual language or imagery, derogatory comments or personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.</p>
+<p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed from the project team.</p>
+<p>Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening an issue or contacting one or more of the project maintainers.</p>
+<p>This Code of Conduct is adapted from the Contributor Covenant (<a href="http:contributor-covenant.org" class="uri">http:contributor-covenant.org</a>), version 1.0.0, available at <a href="http://contributor-covenant.org/version/1/0/0/" class="uri">http://contributor-covenant.org/version/1/0/0/</a></p>
+</div>
+
   </div>
 
 </div>
+
 
 
       <footer>
