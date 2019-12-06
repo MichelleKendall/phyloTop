@@ -142,4 +142,16 @@ descending from nodes 25 and 33:
 
     subtreeShow(rtree(20),nodeList=c(25,33), mainCol="navy", subtreeCol="cyan", nodeLabelCol="cyan", edge.width=2)
 
-![](docs/figs/subtreeShow_example-1.png)
+![](figs/subtreeShow_example-1.png)
+
+Contributing / asking a question
+--------------------------------
+
+Contributions are welcome via **pull requests**.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
+
+Questions, feature requests and bugs can be reported using the package’s
+[issue system](https://github.com/michellekendall/phylotop/issues).

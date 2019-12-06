@@ -7,7 +7,7 @@ output: md_document
 
 ```{r setup, echo=FALSE}
 # set global chunk options: images will be 7x7 inches
-knitr::opts_chunk$set(fig.width=7, fig.height=7, fig.path="docs/figs/", cache=FALSE, dpi=96)
+knitr::opts_chunk$set(fig.width=7, fig.height=7, fig.path="figs/", cache=FALSE, dpi=96)
 options(digits = 4)
 ```
 
@@ -125,3 +125,16 @@ Plot a random tree with 20 tips, highlighting the the clade(s) descending from n
 ```{r subtreeShow_example}
 subtreeShow(rtree(20),nodeList=c(25,33), mainCol="navy", subtreeCol="cyan", nodeLabelCol="cyan", edge.width=2)
 ```
+
+
+Contributing / asking a question
+--------------------------------
+Contributions are welcome via **pull requests**.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CONDUCT.md). By participating in this project you agree to abide by its
+terms.
+
+Questions, feature requests and bugs can be reported using the package's [issue
+system](https://github.com/michellekendall/phylotop/issues).
+
