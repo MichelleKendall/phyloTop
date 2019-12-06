@@ -80,12 +80,14 @@
 <a href="#installing-phylotop" class="anchor"></a>Installing <em>phyloTop</em>
 </h2>
 <p>To install the development version from github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(devtools)</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(devtools)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"michellekendall/phyloTop"</span>)</a></code></pre></div>
 <p>The stable version can be installed from CRAN using:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"phyloTop"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"phyloTop"</span>)</a></code></pre></div>
 <p>Then, to load the package, use:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"phyloTop"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"phyloTop"</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## Loading required package: ape</span></a></code></pre></div>
 </div>
 <div id="content-overview" class="section level2">
 <h2 class="hasAnchor">
@@ -141,27 +143,38 @@
 <h4 class="hasAnchor">
 <a href="#tree-statistics" class="anchor"></a>Tree statistics:</h4>
 <p>Apply tree statistic functions to a list of 10 random trees, each with 50 tips:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="reference/phyloTop.html">phyloTop</a></span>(<span class="kw">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</a></code></pre></div>
-<p>Example output:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co">##   avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo   stairs1    stairs2</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">## 1   3.000000       19    0.11139456       12        10          8          295 0.7755102 0.01576994</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">## 2   3.000000       12    0.13945578       26        11          7          308 0.6734694 0.01982611</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">## 3   2.000000       19    0.10289116       12        10          7          289 0.5918367 0.01719111</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">## 4   2.750000       17    0.08758503       16         9          6          277 0.5714286 0.01921548</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">## 5   3.000000       19    0.06207483       12         8          7          257 0.4489796 0.02279353</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">## 6   2.666667       16    0.19132653       18        13          8          365 0.3877551 0.01828405</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">## 7   2.000000       18    0.12414966       14        11          8          306 0.9591837 0.01403966</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">## 8   3.000000       18    0.08758503       14        11          9          271 0.4285714 0.02308904</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">## 9   2.500000       14    0.15051020       22        11         11          341 0.9795918 0.01062925</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">## 10  2.000000       17    0.14370748       16        12          8          321 0.2244898 0.02706817</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw"><a href="reference/phyloTop.html">phyloTop</a></span>(<span class="kw">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">##    avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">## 1      0.000       19            82       12         9          9          312</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">## 2      2.167       16           120       18         9          7          330</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">## 3      2.500       19           192       12        12          6          394</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">## 4      2.333       16           139       18        11          9          345</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">## 5      2.000       18           150       14        10          8          358</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">## 6      2.333       17           105       16        11         10          321</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">## 7      2.333       19           112       12        10          5          330</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">## 8      2.333       15           229       20        13          9          421</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">## 9      3.000       17           121       16        11          7          331</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">## 10     3.000       16           181       18        12          7          377</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">##    stairs1 stairs2</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">## 1   0.5510  0.7257</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">## 2   0.5306  0.6752</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">## 3   0.5102  0.6907</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">## 4   0.6327  0.6487</span></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">## 5   0.5714  0.6880</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">## 6   0.6122  0.6649</span></a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">## 7   0.5714  0.6696</span></a>
+<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">## 8   0.6735  0.5760</span></a>
+<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">## 9   0.6122  0.6487</span></a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">## 10  0.6122  0.6237</span></a></code></pre></div>
 </div>
 <div id="tree-visualisation-tools-1" class="section level4">
 <h4 class="hasAnchor">
 <a href="#tree-visualisation-tools-1" class="anchor"></a>Tree visualisation tools:</h4>
-<p>Plot a random tree with 20 tips, highlighting the the clade(s) descending from nodes 23 and 35:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/subtreeShow.html">subtreeShow</a></span>(<span class="kw">rtree</span>(<span class="dv">20</span>),<span class="dt">nodeList=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">23</span>,<span class="dv">35</span>), <span class="dt">mainCol=</span><span class="st">"navy"</span>, <span class="dt">subtreeCol=</span><span class="st">"cyan"</span>, <span class="dt">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="dt">edge.width=</span><span class="dv">2</span>)</a></code></pre></div>
-<p>Example output:</p>
-<p><img src="inst/doc/subtreeShowExample.png" alt="example plot of subtreeShow"></p>
+<p>Plot a random tree with 20 tips, highlighting the the clade(s) descending from nodes 25 and 33:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/subtreeShow.html">subtreeShow</a></span>(<span class="kw">rtree</span>(<span class="dv">20</span>),<span class="dt">nodeList=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">25</span>,<span class="dv">33</span>), <span class="dt">mainCol=</span><span class="st">"navy"</span>, <span class="dt">subtreeCol=</span><span class="st">"cyan"</span>, <span class="dt">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="dt">edge.width=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="figs/subtreeShow_example-1.png"></p>
 </div>
 </div>
 </div>

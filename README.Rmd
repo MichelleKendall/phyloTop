@@ -1,3 +1,16 @@
+---
+title: "phyloTop readme"
+author: "Michelle Kendall"
+date: "`r Sys.Date()`"
+output: md_document
+---
+
+```{r setup, echo=FALSE}
+# set global chunk options: images will be 7x7 inches
+knitr::opts_chunk$set(fig.width=7, fig.height=7, fig.path="docs/figs/", cache=FALSE, dpi=96)
+options(digits = 4)
+```
+
 [![Travis-CI Build Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https://travis-ci.org/MichelleKendall/phyloTop)
 [![CRAN Status Badge](http://www.r-pkg.org/badges/version/phyloTop)](https://cran.r-project.org/package=phyloTop)
 [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/phyloTop)](http://cran.rstudio.com/web/packages/phyloTop/index.html)
