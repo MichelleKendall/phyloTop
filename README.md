@@ -3,14 +3,16 @@ Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https
 [![CRAN Status
 Badge](http://www.r-pkg.org/badges/version/phyloTop)](https://cran.r-project.org/package=phyloTop)
 [![CRAN
-Downloads](https://cranlogs.r-pkg.org/badges/phyloTop)](https://cran.rstudio.com/web/packages/phyloTop/index.html)
+Downloads](http://cranlogs.r-pkg.org/badges/phyloTop)](http://cran.rstudio.com/web/packages/phyloTop/index.html)
 
-# *phyloTop*: Calculating Topological Properties of Phylogenies
+*phyloTop*: Calculating Topological Properties of Phylogenies
+=============================================================
 
 *phyloTop* provides tools for calculating and viewing topological
 properties of phylogenetic trees.
 
-## Installing *phyloTop*
+Installing *phyloTop*
+---------------------
 
 To install the development version from github:
 
@@ -27,7 +29,8 @@ Then, to load the package, use:
 
     ## Loading required package: ape
 
-## Content overview
+Content overview
+----------------
 
 The key functions available in *phyloTop* are:
 
@@ -98,7 +101,8 @@ The key functions available in *phyloTop* are:
 -   **`getLabGenealogy`**: create a genealogy from an epidemiological
     record
 
-## Examples
+Examples
+--------
 
 #### Tree statistics:
 
@@ -140,13 +144,14 @@ descending from nodes 25 and 33:
 
 ![](figs/subtreeShow_example-1.png)
 
-## Contributing / asking a question
+Contributing / asking a question
+--------------------------------
 
 Contributions are welcome via **pull requests**.
 
 Please note that this project is released with a [Contributor Code of
-Conduct](https://github.com/MichelleKendall/phyloTop/blob/master/CONDUCT.md).
-By participating in this project you agree to abide by its terms.
+Conduct](CONDUCT.md). By participating in this project you agree to
+abide by its terms.
 
 Questions, feature requests and bugs can be reported using the package’s
 [issue system](https://github.com/michellekendall/phylotop/issues).
