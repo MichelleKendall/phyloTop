@@ -1,4 +1,4 @@
-phyloTop v2.1.1
+phyloTop v2.1.2
 ===============
 
 We are grateful to Orlando Schwery for bringing to our attention that 'is.binary.tree()' from ape is deprecated and was issuing a warning whenever phyloCheck was called. We have now changed it to the supported 'is.binary()'. 

@@ -1,12 +1,13 @@
 Package: phyloTop
 Title: Calculating Topological Properties of Phylogenies
 Date: 2023-01-24
-Version: 2.1.1
+Version: 2.1.2
 Authors@R: c(MK=person("Michelle", "Kendall", email="michelle.kendall@warwick.ac.uk", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7344-7071")),
       MB=person("Michael", "Boyd", email="mboyd855@gmail.com", role = c("aut")),
 	    CC=person("Caroline", "Colijn", role = c("aut")))
 Description: Tools for calculating and viewing topological properties of phylogenetic trees.
 License: GPL-2
+Encoding: UTF-8
 Depends:
 	R (>= 3.2.2),
 	ape

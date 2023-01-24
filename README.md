@@ -3,7 +3,7 @@ Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https
 [![CRAN Status
 Badge](http://www.r-pkg.org/badges/version/phyloTop)](https://cran.r-project.org/package=phyloTop)
 [![CRAN
-Downloads](http://cranlogs.r-pkg.org/badges/phyloTop)](https://cran.rstudio.com/web/packages/phyloTop/index.html)
+Downloads](http://cranlogs.r-pkg.org/badges/phyloTop)](https://cran.r-project.org/package=phyloTop)
 
 # *phyloTop*: Calculating Topological Properties of Phylogenies
 
@@ -138,7 +138,7 @@ descending from nodes 25 and 33:
 
     subtreeShow(rtree(20),nodeList=c(25,33), mainCol="navy", subtreeCol="cyan", nodeLabelCol="cyan", edge.width=2)
 
-![](figs/subtreeShow_example-1.png)
+![](docs/figs/subtreeShow_example-1.png)
 
 ## Contributing / asking a question
 
