@@ -6,19 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculating Topological Properties of Phylogenies • phyloTop</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
+<script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Calculating Topological Properties of Phylogenies">
 <meta property="og:description" content="Tools for calculating and viewing topological properties of phylogenetic trees.">
-<meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">phyloTop</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -52,8 +48,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/MichelleKendall/phyloTop">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/MichelleKendall/phyloTop/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -71,31 +67,32 @@
   <div class="contents col-md-9">
 
 
-<div id="phylotop-calculating-topological-properties-of-phylogenies" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#phylotop-calculating-topological-properties-of-phylogenies" class="anchor"></a><em>phyloTop</em>: Calculating Topological Properties of Phylogenies</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="phylotop-calculating-topological-properties-of-phylogenies">
+<em>phyloTop</em>: Calculating Topological Properties of Phylogenies<a class="anchor" aria-label="anchor" href="#phylotop-calculating-topological-properties-of-phylogenies"></a>
+</h1></div>
 <p><em>phyloTop</em> provides tools for calculating and viewing topological properties of phylogenetic trees.</p>
-<div id="installing-phylotop" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installing-phylotop" class="anchor"></a>Installing <em>phyloTop</em>
+<div class="section level2">
+<h2 id="installing-phylotop">Installing <em>phyloTop</em>
+<a class="anchor" aria-label="anchor" href="#installing-phylotop"></a>
 </h2>
 <p>To install the development version from github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(devtools)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"michellekendall/phyloTop"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"michellekendall/phyloTop"</span>)</span></code></pre></div>
 <p>The stable version can be installed from CRAN using:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"phyloTop"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"phyloTop"</span>)</span></code></pre></div>
 <p>Then, to load the package, use:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"phyloTop"</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## Loading required package: ape</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"phyloTop"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Loading required package: ape</span></span></code></pre></div>
 </div>
-<div id="content-overview" class="section level2">
-<h2 class="hasAnchor">
-<a href="#content-overview" class="anchor"></a>Content overview</h2>
+<div class="section level2">
+<h2 id="content-overview">Content overview<a class="anchor" aria-label="anchor" href="#content-overview"></a>
+</h2>
 <p>The key functions available in <em>phyloTop</em> are:</p>
-<div id="tree-statistics-and-topological-properties" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tree-statistics-and-topological-properties" class="anchor"></a>Tree statistics and topological properties:</h4>
+<div class="section level4">
+<h4 id="tree-statistics-and-topological-properties">Tree statistics and topological properties:<a class="anchor" aria-label="anchor" href="#tree-statistics-and-topological-properties"></a>
+</h4>
 <ul>
 <li><p><strong><code>avgLadder</code></strong>: find the average ladder size in a tree</p></li>
 <li><p><strong><code>cherries</code></strong>: find the number of cherries in a tree</p></li>
@@ -118,119 +115,130 @@
 <li><p><strong><code>widths</code></strong>: find the number of nodes at each depth in a tree</p></li>
 </ul>
 </div>
-<div id="tree-visualisation-tools" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tree-visualisation-tools" class="anchor"></a>Tree visualisation tools:</h4>
+<div class="section level4">
+<h4 id="tree-visualisation-tools">Tree visualisation tools:<a class="anchor" aria-label="anchor" href="#tree-visualisation-tools"></a>
+</h4>
 <ul>
 <li><p><strong><code>configShow</code></strong>: plot a tree, highlighting the configurations of a given size</p></li>
 <li><p><strong><code>ladderShow</code></strong>: plot a tree, highlighting the “ladders”</p></li>
 <li><p><strong><code>subtreeShow</code></strong>: plot a tree, highlighting the subtree(s) descending from the given node(s)</p></li>
 </ul>
 </div>
-<div id="simulating-an-epidemic-and-creating-the-corresponding-genealogy" class="section level4">
-<h4 class="hasAnchor">
-<a href="#simulating-an-epidemic-and-creating-the-corresponding-genealogy" class="anchor"></a>Simulating an epidemic and creating the corresponding genealogy:</h4>
+<div class="section level4">
+<h4 id="simulating-an-epidemic-and-creating-the-corresponding-genealogy">Simulating an epidemic and creating the corresponding genealogy:<a class="anchor" aria-label="anchor" href="#simulating-an-epidemic-and-creating-the-corresponding-genealogy"></a>
+</h4>
 <ul>
 <li><p><strong><code>makeEpiRecord</code></strong>: simulate an epidemiological record of infectors, infectees, infection times and recovery times</p></li>
 <li><p><strong><code>getLabGenealogy</code></strong>: create a genealogy from an epidemiological record</p></li>
 </ul>
 </div>
 </div>
-<div id="examples" class="section level2">
-<h2 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h2>
-<div id="tree-statistics" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tree-statistics" class="anchor"></a>Tree statistics:</h4>
+<div class="section level2">
+<h2 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
+</h2>
+<div class="section level4">
+<h4 id="tree-statistics">Tree statistics:<a class="anchor" aria-label="anchor" href="#tree-statistics"></a>
+</h4>
 <p>Apply tree statistic functions to a list of 10 random trees, each with 50 tips:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span>(<span class="dv">123</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw"><a href="reference/phyloTop.html">phyloTop</a></span>(<span class="kw">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">##    avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">## 1      0.000       19            82       12         9          9          312</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">## 2      2.167       16           120       18         9          7          330</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">## 3      2.500       19           192       12        12          6          394</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">## 4      2.333       16           139       18        11          9          345</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">## 5      2.000       18           150       14        10          8          358</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">## 6      2.333       17           105       16        11         10          321</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">## 7      2.333       19           112       12        10          5          330</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">## 8      2.333       15           229       20        13          9          421</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">## 9      3.000       17           121       16        11          7          331</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">## 10     3.000       16           181       18        12          7          377</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">##    stairs1 stairs2</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">## 1   0.5510  0.7257</span></a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">## 2   0.5306  0.6752</span></a>
-<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">## 3   0.5102  0.6907</span></a>
-<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">## 4   0.6327  0.6487</span></a>
-<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">## 5   0.5714  0.6880</span></a>
-<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">## 6   0.6122  0.6649</span></a>
-<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">## 7   0.5714  0.6696</span></a>
-<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">## 8   0.6735  0.5760</span></a>
-<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">## 9   0.6122  0.6487</span></a>
-<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">## 10  0.6122  0.6237</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">phyloTop</span>(<span class="fu">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1      0.000       19            82       12         9          9          312</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2      2.167       16           120       18         9          7          330</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3      2.500       19           192       12        12          6          394</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4      2.333       16           139       18        11          9          345</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5      2.000       18           150       14        10          8          358</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6      2.333       17           105       16        11         10          321</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 7      2.333       19           112       12        10          5          330</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 8      2.333       15           229       20        13          9          421</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 9      3.000       17           121       16        11          7          331</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 10     3.000       16           181       18        12          7          377</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">##    stairs1 stairs2</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   0.5510  0.7257</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   0.5306  0.6752</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   0.5102  0.6907</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   0.6327  0.6487</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 5   0.5714  0.6880</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 6   0.6122  0.6649</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 7   0.5714  0.6696</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 8   0.6735  0.5760</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 9   0.6122  0.6487</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 10  0.6122  0.6237</span></span></code></pre></div>
 </div>
-<div id="tree-visualisation-tools-1" class="section level4">
-<h4 class="hasAnchor">
-<a href="#tree-visualisation-tools-1" class="anchor"></a>Tree visualisation tools:</h4>
+<div class="section level4">
+<h4 id="tree-visualisation-tools-1">Tree visualisation tools:<a class="anchor" aria-label="anchor" href="#tree-visualisation-tools-1"></a>
+</h4>
 <p>Plot a random tree with 20 tips, highlighting the the clade(s) descending from nodes 25 and 33:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/subtreeShow.html">subtreeShow</a></span>(<span class="kw">rtree</span>(<span class="dv">20</span>),<span class="dt">nodeList=</span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">25</span>,<span class="dv">33</span>), <span class="dt">mainCol=</span><span class="st">"navy"</span>, <span class="dt">subtreeCol=</span><span class="st">"cyan"</span>, <span class="dt">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="dt">edge.width=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="figs/subtreeShow_example-1.png"></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subtreeShow</span>(<span class="fu">rtree</span>(<span class="dv">20</span>),<span class="at">nodeList=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">33</span>), <span class="at">mainCol=</span><span class="st">"navy"</span>, <span class="at">subtreeCol=</span><span class="st">"cyan"</span>, <span class="at">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="at">edge.width=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="reference/figures/subtreeShow_example-1.png"></p>
 </div>
 </div>
-<div id="contributing-asking-a-question" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contributing-asking-a-question" class="anchor"></a>Contributing / asking a question</h2>
+<div class="section level2">
+<h2 id="contributing--asking-a-question">Contributing / asking a question<a class="anchor" aria-label="anchor" href="#contributing--asking-a-question"></a>
+</h2>
 <p>Contributions are welcome via <strong>pull requests</strong>.</p>
-<p>Please note that this project is released with a <a href="CONDUCT.html">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
-<p>Questions, feature requests and bugs can be reported using the package’s <a href="https://github.com/michellekendall/phylotop/issues">issue system</a>.</p>
+<p>Please note that this project is released with a <a href="https://github.com/MichelleKendall/phyloTop/blob/master/CONDUCT.md" class="external-link">Contributor Code of Conduct</a>. By participating in this project you agree to abide by its terms.</p>
+<p>Questions, feature requests and bugs can be reported using the package’s <a href="https://github.com/michellekendall/phylotop/issues" class="external-link">issue system</a>.</p>
 </div>
 </div>
 
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=phyloTop">https://​cloud.r-project.org/​package=phyloTop</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/MichelleKendall/phyloTop">https://​github.com/​MichelleKendall/​phyloTop</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=phyloTop" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/MichelleKendall/phyloTop/" class="external-link">Browse source code</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-2">GPL-2</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-2" class="external-link">GPL-2</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Michelle Kendall <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html#citation">Citing phyloTop</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Michelle Kendall <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7344-7071" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>Michael Boyd <br><small class="roles"> Author </small>  </li>
 <li>Caroline Colijn <br><small class="roles"> Author </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/MichelleKendall/phyloTop"><img src="https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master" alt="Travis-CI Build Status"></a></li>
-<li><a href="https://cran.r-project.org/package=phyloTop"><img src="http://www.r-pkg.org/badges/version/phyloTop" alt="CRAN Status Badge"></a></li>
-<li><a href="http://cran.rstudio.com/web/packages/phyloTop/index.html"><img src="http://cranlogs.r-pkg.org/badges/phyloTop" alt="CRAN Downloads"></a></li>
+<li><a href="https://travis-ci.org/MichelleKendall/phyloTop" class="external-link"><img src="https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://cran.r-project.org/package=phyloTop" class="external-link"><img src="http://www.r-pkg.org/badges/version/phyloTop" alt="CRAN Status Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=phyloTop" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/phyloTop" alt="CRAN Downloads"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Michelle Kendall, Michael Boyd, Caroline Colijn.</p>
+  <p></p>
+<p>Developed by Michelle Kendall, Michael Boyd, Caroline Colijn.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>
@@ -238,6 +246,8 @@
 
   
 
+
+  
 
   </body>
 </html>

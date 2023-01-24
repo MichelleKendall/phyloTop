@@ -138,7 +138,7 @@ descending from nodes 25 and 33:
 
     subtreeShow(rtree(20),nodeList=c(25,33), mainCol="navy", subtreeCol="cyan", nodeLabelCol="cyan", edge.width=2)
 
-![](docs/figs/subtreeShow_example-1.png)
+![](man/figures/subtreeShow_example-1.png)
 
 ## Contributing / asking a question
 
