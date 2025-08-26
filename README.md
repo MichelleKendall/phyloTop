@@ -1,5 +1,5 @@
 [![Travis-CI Build
-Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https://travis-ci.org/MichelleKendall/phyloTop)
+Status](https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master)](https://app.travis-ci.com/MichelleKendall/phyloTop)
 [![CRAN Status
 Badge](http://www.r-pkg.org/badges/version/phyloTop)](https://cran.r-project.org/package=phyloTop)
 [![CRAN

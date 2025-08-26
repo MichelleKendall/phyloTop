@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculating Topological Properties of Phylogenies • phyloTop</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -19,7 +19,7 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">phyloTop</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1.3</span>
       </span>
     </div>
 
@@ -50,7 +50,7 @@
 <li>
   <a href="https://github.com/MichelleKendall/phyloTop/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -61,7 +61,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="contents col-md-9">
@@ -77,14 +77,14 @@
 <a class="anchor" aria-label="anchor" href="#installing-phylotop"></a>
 </h2>
 <p>To install the development version from github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"michellekendall/phyloTop"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"michellekendall/phyloTop"</span>)</span></code></pre></div>
 <p>The stable version can be installed from CRAN using:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"phyloTop"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"phyloTop"</span>)</span></code></pre></div>
 <p>Then, to load the package, use:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"phyloTop"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Loading required package: ape</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"phyloTop"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="do">## Loading required package: ape</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="content-overview">Content overview<a class="anchor" aria-label="anchor" href="#content-overview"></a>
@@ -140,37 +140,37 @@
 <h4 id="tree-statistics">Tree statistics:<a class="anchor" aria-label="anchor" href="#tree-statistics"></a>
 </h4>
 <p>Apply tree statistic functions to a list of 10 random trees, each with 50 tips:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">phyloTop</span>(<span class="fu">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 1      0.000       19            82       12         9          9          312</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 2      2.167       16           120       18         9          7          330</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 3      2.500       19           192       12        12          6          394</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 4      2.333       16           139       18        11          9          345</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 5      2.000       18           150       14        10          8          358</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 6      2.333       17           105       16        11         10          321</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 7      2.333       19           112       12        10          5          330</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 8      2.333       15           229       20        13          9          421</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 9      3.000       17           121       16        11          7          331</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 10     3.000       16           181       18        12          7          377</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">##    stairs1 stairs2</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 1   0.5510  0.7257</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 2   0.5306  0.6752</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 3   0.5102  0.6907</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 4   0.6327  0.6487</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 5   0.5714  0.6880</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 6   0.6122  0.6649</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 7   0.5714  0.6696</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 8   0.6735  0.5760</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 9   0.6122  0.6487</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 10  0.6122  0.6237</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">phyloTop</span>(<span class="fu">rmtree</span>(<span class="dv">10</span>,<span class="dv">50</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="do">##    avgLadder cherries colless.phylo ILnumber maxHeight pitchforks sackin.phylo</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="do">## 1      0.000       19            82       12         9          9          312</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="do">## 2      2.167       16           120       18         9          7          330</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="do">## 3      2.500       19           192       12        12          6          394</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="do">## 4      2.333       16           139       18        11          9          345</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">## 5      2.000       18           150       14        10          8          358</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">## 6      2.333       17           105       16        11         10          321</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## 7      2.333       19           112       12        10          5          330</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## 8      2.333       15           229       20        13          9          421</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## 9      3.000       17           121       16        11          7          331</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="do">## 10     3.000       16           181       18        12          7          377</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="do">##    stairs1 stairs2</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="do">## 1   0.5510  0.7257</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="do">## 2   0.5306  0.6752</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="do">## 3   0.5102  0.6907</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="do">## 4   0.6327  0.6487</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="do">## 5   0.5714  0.6880</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="do">## 6   0.6122  0.6649</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="do">## 7   0.5714  0.6696</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="do">## 8   0.6735  0.5760</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="do">## 9   0.6122  0.6487</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="do">## 10  0.6122  0.6237</span></span></code></pre></div>
 </div>
 <div class="section level4">
 <h4 id="tree-visualisation-tools-1">Tree visualisation tools:<a class="anchor" aria-label="anchor" href="#tree-visualisation-tools-1"></a>
 </h4>
 <p>Plot a random tree with 20 tips, highlighting the the clade(s) descending from nodes 25 and 33:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subtreeShow</span>(<span class="fu">rtree</span>(<span class="dv">20</span>),<span class="at">nodeList=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">33</span>), <span class="at">mainCol=</span><span class="st">"navy"</span>, <span class="at">subtreeCol=</span><span class="st">"cyan"</span>, <span class="at">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="at">edge.width=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">subtreeShow</span>(<span class="fu">rtree</span>(<span class="dv">20</span>),<span class="at">nodeList=</span><span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">33</span>), <span class="at">mainCol=</span><span class="st">"navy"</span>, <span class="at">subtreeCol=</span><span class="st">"cyan"</span>, <span class="at">nodeLabelCol=</span><span class="st">"cyan"</span>, <span class="at">edge.width=</span><span class="dv">2</span>)</span></code></pre></div>
 <p><img src="reference/figures/subtreeShow_example-1.png"></p>
 </div>
 </div>
@@ -212,16 +212,16 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Michelle Kendall <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7344-7071" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Michael Boyd <br><small class="roles"> Author </small>  </li>
-<li>Caroline Colijn <br><small class="roles"> Author </small>  </li>
+<li>Michelle Kendall <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-7344-7071" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
+<li>Michael Boyd <br><small class="roles"> Author </small>   </li>
+<li>Caroline Colijn <br><small class="roles"> Author </small>   </li>
 </ul>
 </div>
 
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://travis-ci.org/MichelleKendall/phyloTop" class="external-link"><img src="https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master" alt="Travis-CI Build Status"></a></li>
+<li><a href="https://app.travis-ci.com/MichelleKendall/phyloTop" class="external-link"><img src="https://travis-ci.org/MichelleKendall/phyloTop.png?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://cran.r-project.org/package=phyloTop" class="external-link"><img src="http://www.r-pkg.org/badges/version/phyloTop" alt="CRAN Status Badge"></a></li>
 <li><a href="https://cran.r-project.org/package=phyloTop" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/phyloTop" alt="CRAN Downloads"></a></li>
 </ul>
@@ -238,16 +238,16 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>
